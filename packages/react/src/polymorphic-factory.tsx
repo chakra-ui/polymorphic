@@ -3,11 +3,11 @@ import { ComponentWithAs, forwardRef, PropsOf } from './forwardRef'
 
 export type DOMElements = keyof JSX.IntrinsicElements
 
-export type HTMLPolymorphComponents = {
+export type HTMLPolymorphicComponents = {
   [Tag in DOMElements]: ComponentWithAs<Tag>
 }
 
-export type HTMLPolymorphProps<T extends ElementType> = Omit<PropsOf<T>, 'ref'> & {
+export type HTMLPolymorphicProps<T extends ElementType> = Omit<PropsOf<T>, 'ref'> & {
   as?: ElementType
 }
 
@@ -74,5 +74,5 @@ export function polymorphicFactory<
       }
       return cache.get(asElement)
     },
-  }) as PolymorphFactory & HTMLPolymorphComponents
+  }) as PolymorphFactory & HTMLPolymorphicComponents
 }

@@ -1,27 +1,37 @@
 {
-  "name": "polymorphic",
+  "name": "polymorphic-factory",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install",
+    "build": "turbo build",
+    "format:check": "prettier --check packages/**/src",
+    "format:write": "prettier --write packages/**/src",
     "lint": "turbo run lint",
+    "prepare": "husky install",
+    "react": "pnpm --filter=@polymorphic-factory/react",
+    "release": "changeset publish",
+    "release:rc": "changeset publish --tag rc",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "react": "pnpm --filter=@polymorphic/react-factory"
+    "version": "changeset version",
+    "version:rc": "changeset version --snapshot rc"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.7",
+    "@changesets/cli": "2.25.2",
     "@commitlint/cli": "17.1.2",
     "@commitlint/config-conventional": "17.1.0",
+    "@types/node": "18.11.7",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "@typescript-eslint/parser": "5.41.0",
-    "@types/node": "18.11.7",
     "eslint": "8.26.0",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "prettier": "2.7.1",
+    "tsup": "^6.3.0",
     "turbo": "1.6.1",
     "typescript": "4.8.4"
   },

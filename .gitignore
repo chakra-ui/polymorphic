@@ -284,3 +284,4 @@ dist
 # End of https://www.toptal.com/developers/gitignore/api/macos,node,visualstudiocode,intellij+all
 
 .turbo
+*.backup

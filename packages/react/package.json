@@ -1,6 +1,6 @@
 {
-  "name": "@polymorphic/react-factory",
-  "version": "0.1.0",
+  "name": "@polymorphic-factory/react",
+  "version": "0.0.0",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/chakra-ui/polymorphic-component",
@@ -17,33 +17,37 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chakra-ui/polymorphic-component.git",
-    "directory": "packages/polymorphic-component"
+    "directory": "packages/react"
   },
   "bugs": {
     "url": "https://github.com/chakra-ui/polymorphic-component/issues"
   },
   "scripts": {
+    "dev": "pnpm run build --watch",
+    "build": "tsup src/index.ts",
     "test": "vitest run --reporter verbose",
     "test:watch": "vitest",
     "lint": "eslint --ext .ts,.tsx src",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@testing-library/react": "13.4.0",
-    "@types/react": "18.0.23",
-    "@types/react-dom": "18.0.7",
     "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "13.4.0",
+    "@types/react": "18.0.24",
+    "@types/react-dom": "18.0.8",
     "@types/testing-library__jest-dom": "5.14.5",
     "@vitejs/plugin-react": "2.2.0",
-    "jsdom": "20.0.1",
+    "clean-package": "2.1.2",
+    "jsdom": "20.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.8.4",
-    "vite": "3.2.0",
-    "vitest": "0.24.3"
+    "vite": "3.2.2",
+    "vitest": "0.24.4"
   },
   "peerDependencies": {
-    "react": ">=18"
+    "react": ">=16.8 || >=17 || >18"
   }
 }

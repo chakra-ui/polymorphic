@@ -54,7 +54,7 @@ describe('Polymorphic Factory', () => {
       expect(element).toHaveAttribute('data-custom-styled', 'true')
     })
 
-    it('should render an element with the custom factory', () => {
+    it('should render an element with styled options', () => {
       const options = { customOption: 'awesome' }
       const Aside = customPoly('aside', options)
 

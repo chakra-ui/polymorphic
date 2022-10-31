@@ -1,10 +1,12 @@
-# @polymorphic
+# @polymorphic-factory
 
 ## What's inside?
 
 This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages:
 
 ### Packages
+
+- react
 
 ### Build
 
