@@ -1,8 +1,15 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
+    "build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build"]
+    },
     "test": {
       "outputs": []
+    },
+    "dev": {
+      "cache": false
     },
     "lint": {
       "outputs": []
@@ -10,5 +17,6 @@
     "typecheck": {
       "outputs": []
     }
-  }
+  },
+  "globalDependencies": ["tsconfig.json"]
 }
