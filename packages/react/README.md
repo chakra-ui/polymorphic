@@ -90,6 +90,15 @@ It still supports the `as` prop, which would replace the `OriginalComponent`.
 // renders <div />
 ```
 
+## Types
+
+```ts
+import type { HTMLPolymorphicComponents, HTMLPolymorphicProps } from '@polymorphic-factory/react'
+
+type PolymorphicDiv = HTMLPolymorphicComponents['div']
+type DivProps = HTMLPolymorphicProps<'div'>
+```
+
 ## License
 
 MIT © [Tim Kolberger](https://github.com/timkolberger)
