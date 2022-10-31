@@ -38,6 +38,7 @@ importers:
       '@types/react-dom': 18.0.8
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-react': 2.2.0
+      clean-package: 2.1.2
       jsdom: 20.0.2
       react: 18.2.0
       react-dom: 18.2.0
@@ -51,6 +52,7 @@ importers:
       '@types/react-dom': 18.0.8
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-react': 2.2.0_vite@3.2.2
+      clean-package: 2.1.2
       jsdom: 20.0.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -1287,6 +1289,13 @@ packages:
     resolution: {integrity: sha512-yH4RezKOGlOhxkmhbeNuC4eYZKAUsEaGtBuBzDDP1eFUKiccDWzBABxBfOx31IDwDIXMTxWuwAxUGModvkbuVw==}
     dev: true
 
+  /clean-package/2.1.2:
+    resolution: {integrity: sha512-Hpmu29apdAmfzTW+B7LkxeJVqW8puYHW4P4yfd7JoxjNzmWirQZAZr1XVMqb099OmloMAuASAipo9x4qccysLw==}
+    hasBin: true
+    dependencies:
+      dot-object: 2.1.4
+    dev: true
+
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -1593,6 +1602,14 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       webidl-conversions: 7.0.0
+    dev: true
+
+  /dot-object/2.1.4:
+    resolution: {integrity: sha512-7FXnyyCLFawNYJ+NhkqyP9Wd2yzuo+7n9pGiYpkmXCTYa8Ci2U0eUNDVg5OuO5Pm6aFXI2SWN8/N/w7SJWu1WA==}
+    hasBin: true
+    dependencies:
+      commander: 4.1.1
+      glob: 7.2.3
     dev: true
 
   /dot-prop/5.3.0:
