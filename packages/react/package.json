@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "",
   "keywords": [],
-  "homepage": "https://github.com/chakra-ui/polymorphic-component",
+  "homepage": "https://github.com/chakra-ui/polymorphic",
   "author": "Tim Kolberger <tim@kolberger.eu>",
   "license": "MIT",
   "main": "src/index.ts",
@@ -16,11 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chakra-ui/polymorphic-component.git",
+    "url": "git+https://github.com/chakra-ui/polymorphic.git",
     "directory": "packages/react"
   },
   "bugs": {
-    "url": "https://github.com/chakra-ui/polymorphic-component/issues"
+    "url": "https://github.com/chakra-ui/polymorphic/issues"
   },
   "scripts": {
     "dev": "pnpm run build --watch",
