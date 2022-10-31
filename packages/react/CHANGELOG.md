@@ -1,5 +1,11 @@
 # @polymorphic-factory/react
 
+## 0.1.2
+
+### Patch Changes
+
+- [#7](https://github.com/chakra-ui/polymorphic/pull/7) [`861edac`](https://github.com/chakra-ui/polymorphic/commit/861edac232bca7e0b528e2aafc60cab363506f1a) Thanks [@TimKolberger](https://github.com/TimKolberger)! - Updated the repository path in package.json.
+
 ## 0.1.1
 
 ### Patch Changes
