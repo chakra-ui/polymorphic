@@ -11,9 +11,15 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "react": "pnpm --filter=@polymorphic-factory/react"
+    "react": "pnpm --filter=@polymorphic-factory/react",
+    "version": "changeset version",
+    "release": "changeset publish",
+    "version:rc": "changeset version --snapshot rc",
+    "release:rc": "changeset publish --tag rc"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.7",
+    "@changesets/cli": "2.25.2",
     "@commitlint/cli": "17.1.2",
     "@commitlint/config-conventional": "17.1.0",
     "@types/node": "18.11.7",
