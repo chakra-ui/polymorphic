@@ -1,8 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "jsx": "preserve",
-    "jsxImportSource": "react"
+    "jsx": "react-jsx"
   },
   "include": ["src", "test"]
 }
