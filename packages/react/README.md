@@ -49,9 +49,18 @@ const poly = polymorphicFactory({
   },
 })
 
+const WithOptions = poly('div', { hello: 'world' })
+
 const App = () => {
-  return <poly.div hello="world" />
-  // renders <div data-custom-styled data-options="{ \"hello\": \"world\" }" />
+  return (
+    <>
+      <poly.div hello="world" />
+      {/* renders <div data-custom-styled hello="world" /> */}
+
+      <WithOptions />
+      {/* renders <div data-custom-styled data-options="{ \"hello\": \"world\" }" /> */}
+    </>
+  )
 }
 ```
 
