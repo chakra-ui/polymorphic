@@ -1,4 +1,10 @@
-# @polymorphic-factory
+<h1 align="center">@polymorphic-factory</h1>
+
+<p align="center">
+  <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7"/>
+  <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic"/>
+  <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
+</p>
 
 ## What's inside?
 
@@ -6,7 +12,7 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 
 ### Packages
 
-- react
+- [react](./packages/react/README.md)
 
 ### Build
 

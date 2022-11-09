@@ -1,4 +1,12 @@
-# @polymorphic-factory/react
+<h1 align="center">@polymorphic-factory/react</h1>
+
+<p align="center">
+  <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7"/>
+  <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic"/>
+  <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
+  <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@polymorphic-factory/react"/>
+  <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@polymorphic-factory/react?style=flat"/>
+</p>
 
 Create polymorphic React components with a customizable `styled` function.
 
