@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "pnpm run build --watch",
     "build": "tsup src/index.ts",
-    "test": "vitest run --reporter verbose",
+    "test": "vitest run --reporter verbose --coverage",
     "test:watch": "vitest",
     "lint": "eslint --ext .ts,.tsx src",
     "typecheck": "tsc --noEmit",
@@ -39,6 +39,7 @@
     "@types/react-dom": "18.0.8",
     "@types/testing-library__jest-dom": "5.14.5",
     "@vitejs/plugin-react": "2.2.0",
+    "@vitest/coverage-c8": "0.25.1",
     "clean-package": "2.1.2",
     "jsdom": "20.0.2",
     "react": "18.2.0",
