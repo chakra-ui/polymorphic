@@ -3,6 +3,7 @@ import { Dynamic } from 'solid-js/web'
 
 type DOMElements = keyof JSX.IntrinsicElements
 
+// any is required for the import('solid/web').ValidComponent typings:
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ElementType = DOMElements | Component<any>
 
@@ -45,6 +46,7 @@ type PolymorphFactory = {
 }
 
 function defaultStyled(originalComponent: ElementType) {
+  // any is required for the import('solid/web').ValidComponent typings:
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (props: ComponentProps<ComponentWithAs<any>>) => {
     const [local, others] = splitProps(props, ['as'])
