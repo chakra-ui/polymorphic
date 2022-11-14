@@ -17,7 +17,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chakra-ui/polymorphic.git",
-    "directory": "packages/react"
+    "directory": "packages/solid"
   },
   "bugs": {
     "url": "https://github.com/chakra-ui/polymorphic/issues"
