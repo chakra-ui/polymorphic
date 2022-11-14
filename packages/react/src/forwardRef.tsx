@@ -1,11 +1,11 @@
 import {
-  ComponentProps,
-  ComponentPropsWithoutRef,
-  ElementType,
+  type ComponentProps,
+  type ComponentPropsWithoutRef,
+  type ElementType,
+  type ForwardRefRenderFunction,
+  type ValidationMap,
+  type WeakValidationMap,
   forwardRef as forwardRefReact,
-  ForwardRefRenderFunction,
-  ValidationMap,
-  WeakValidationMap,
 } from 'react'
 
 /**
@@ -15,20 +15,28 @@ export type PropsOf<T extends ElementType> = ComponentPropsWithoutRef<T> & {
   as?: ElementType
 }
 
+/**
+ * Assign property types from right to left.
+ * Think `Object.assign` for types.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+ */
+export type Assign<Target, Source> = Omit<Target, keyof Source> & Source
+
 export type OmitCommonProps<
   Target,
   OmitAdditionalProps extends string | number | symbol = never,
 > = Omit<Target, 'transition' | 'as' | 'color' | OmitAdditionalProps>
 
-export type AssignCommon<
-  SourceProps extends object = Record<string, unknown>,
-  OverrideProps extends object = Record<string, unknown>,
-> = OmitCommonProps<SourceProps, keyof OverrideProps> & OverrideProps
+type AssignCommon<
+  SourceProps extends object = Record<never, never>,
+  OverrideProps extends object = Record<never, never>,
+> = Assign<OmitCommonProps<SourceProps>, OverrideProps>
 
-export type MergeWithAs<
-  ComponentProps extends Record<string, unknown>,
-  AsProps extends Record<string, unknown>,
-  AdditionalProps extends Record<string, unknown> = Record<string, unknown>,
+type MergeWithAs<
+  ComponentProps extends object,
+  AsProps extends object,
+  AdditionalProps extends object = Record<never, never>,
   AsComponent extends ElementType = ElementType,
 > = AssignCommon<ComponentProps, AdditionalProps> &
   AssignCommon<AsProps, AdditionalProps> & {
@@ -37,7 +45,7 @@ export type MergeWithAs<
 
 export type ComponentWithAs<
   Component extends ElementType,
-  Props extends Record<string, unknown> = Record<string, unknown>,
+  Props extends object = Record<never, never>,
 > = {
   <AsComponent extends ElementType = Component>(
     props: MergeWithAs<ComponentProps<Component>, ComponentProps<AsComponent>, Props, AsComponent>,
@@ -52,7 +60,7 @@ export type ComponentWithAs<
 
 export function forwardRef<
   Component extends ElementType,
-  Props extends Record<string, unknown> = Record<string, unknown>,
+  Props extends object = Record<never, never>,
 >(
   component: ForwardRefRenderFunction<
     unknown,
