@@ -6,13 +6,39 @@
   <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
 </p>
 
-## What's inside?
+Create polymorphic React/SolidJS components with a customizable `styled` function.
+
+A polymorphic component is a component that can be rendered with a different element.
+
+```tsx
+import { polymorphicFactory } from '@polymorphic-factory/{react,solid}'
+
+const poly = polymorphicFactory()
+
+const App = () => (
+  <>
+    <poly.div />
+    <poly.main>
+      <poly.section>
+        <poly.div as="p">This is rendered as a p element</poly.div>
+      </poly.section>
+    </poly.main>
+  </>
+)
+```
+
+> **Known drawbacks for the type definitions:**
+>
+> Event handlers are not typed correctly when using the `as` prop.
+>
+> This is a deliberate decision to keep the usage as simple as possible.
 
 This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages:
 
 ### Packages
 
 - [react](./packages/react/README.md)
+- [solid](./packages/solid/README.md)
 
 ### Build
 
