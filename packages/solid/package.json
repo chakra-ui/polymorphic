@@ -1,0 +1,53 @@
+{
+  "name": "@polymorphic-factory/solid",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/chakra-ui/polymorphic",
+  "author": "Tim Kolberger <tim@kolberger.eu>",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chakra-ui/polymorphic.git",
+    "directory": "packages/solid"
+  },
+  "bugs": {
+    "url": "https://github.com/chakra-ui/polymorphic/issues"
+  },
+  "scripts": {
+    "dev": "pnpm run build --watch",
+    "build": "tsup src/index.ts",
+    "test": "vitest run --reporter verbose --coverage",
+    "test:watch": "vitest",
+    "lint": "eslint --ext .ts,.tsx src",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "8.19.0",
+    "@testing-library/jest-dom": "5.16.5",
+    "@types/jsdom": "20.0.1",
+    "@types/testing-library__jest-dom": "5.14.5",
+    "@vitest/coverage-c8": "0.25.1",
+    "jsdom": "20.0.2",
+    "solid-js": "1.6.1",
+    "solid-testing-library": "0.5.0",
+    "tsup": "6.4.0",
+    "typescript": "4.8.4",
+    "vite": "3.2.3",
+    "vitest": "0.25.1",
+    "vite-plugin-solid": "2.4.0"
+  },
+  "peerDependencies": {
+    "solid-js": ">=1.6.0"
+  }
+}
