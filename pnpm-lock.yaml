@@ -76,7 +76,7 @@ importers:
       jsdom: 20.0.2
       solid-js: 1.6.1
       solid-testing-library: 0.5.0
-      tsup: 6.4.0
+      tsup: 6.5.0
       typescript: 4.8.4
       vite: 3.2.3
       vite-plugin-solid: 2.4.0
@@ -90,7 +90,7 @@ importers:
       jsdom: 20.0.2
       solid-js: 1.6.1
       solid-testing-library: 0.5.0_solid-js@1.6.1
-      tsup: 6.4.0_typescript@4.8.4
+      tsup: 6.5.0_typescript@4.8.4
       typescript: 4.8.4
       vite: 3.2.3
       vite-plugin-solid: 2.4.0_solid-js@1.6.1+vite@3.2.3
@@ -5061,8 +5061,8 @@ packages:
       - ts-node
     dev: true
 
-  /tsup/6.4.0_typescript@4.8.4:
-    resolution: {integrity: sha512-4OlbqIK/SF+cJp0mMqPM2pKULvgj/1S2Gm3I1aFoFGIryUOyIqPZBoqKkqVQT6uFtWJ5AHftIv0riXKfHox1zQ==}
+  /tsup/6.5.0_typescript@4.8.4:
+    resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
