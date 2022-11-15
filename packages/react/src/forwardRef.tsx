@@ -63,8 +63,8 @@ export function forwardRef<
   Props extends Record<string, unknown> = Record<never, never>,
 >(
   component: ForwardRefRenderFunction<
-    unknown,
-    AssignCommon<ComponentProps<Component>, Props> & {
+    never,
+    AssignCommon<PropsOf<Component>, Props> & {
       as?: ElementType
     }
   >,
