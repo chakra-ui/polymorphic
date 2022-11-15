@@ -29,8 +29,8 @@ export type OmitCommonProps<
 > = Omit<Target, 'transition' | 'as' | 'color' | OmitAdditionalProps>
 
 type AssignCommon<
-  SourceProps extends Record<never, never> = Record<never, never>,
-  OverrideProps extends Record<never, never> = Record<never, never>,
+  SourceProps extends Record<string, unknown> = Record<never, never>,
+  OverrideProps extends Record<string, unknown> = Record<never, never>,
 > = Assign<OmitCommonProps<SourceProps>, OverrideProps>
 
 type MergeWithAs<
