@@ -1,5 +1,15 @@
 # @polymorphic-factory/react
 
+## 0.2.0
+
+### Minor Changes
+
+- [#26](https://github.com/chakra-ui/polymorphic/pull/26) [`122b838`](https://github.com/chakra-ui/polymorphic/commit/122b838309c47312a4414cf3b9dc9da273a48aa4) Thanks [@TimKolberger](https://github.com/TimKolberger)! - Declared bundle exports explicitly.
+
+### Patch Changes
+
+- [#26](https://github.com/chakra-ui/polymorphic/pull/26) [`122b838`](https://github.com/chakra-ui/polymorphic/commit/122b838309c47312a4414cf3b9dc9da273a48aa4) Thanks [@TimKolberger](https://github.com/TimKolberger)! - Fixed an issue where autocomplete for intrinsic element props did not show up.
+
 ## 0.1.2
 
 ### Patch Changes
