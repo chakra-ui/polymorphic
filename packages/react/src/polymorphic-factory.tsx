@@ -1,7 +1,7 @@
-import { ElementType } from 'react'
-import { ComponentWithAs, forwardRef, PropsOf } from './forwardRef'
+import type { ElementType } from 'react'
+import { type ComponentWithAs, forwardRef, type PropsOf } from './forwardRef'
 
-export type DOMElements = keyof JSX.IntrinsicElements
+type DOMElements = keyof JSX.IntrinsicElements
 
 export type HTMLPolymorphicComponents = {
   [Tag in DOMElements]: ComponentWithAs<Tag>
@@ -14,7 +14,7 @@ export type HTMLPolymorphicProps<T extends ElementType> = Omit<PropsOf<T>, 'ref'
 type PolymorphFactory = {
   <
     T extends ElementType,
-    P extends Record<string, unknown> = Record<string, unknown>,
+    P extends Record<string, unknown> = Record<never, never>,
     Options = never,
   >(
     component: T,
