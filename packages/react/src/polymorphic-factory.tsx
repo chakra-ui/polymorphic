@@ -14,7 +14,7 @@ export type HTMLPolymorphicProps<T extends ElementType> = Omit<PropsOf<T>, 'ref'
 type PolymorphFactory = {
   <
     T extends ElementType,
-    P extends Record<string, unknown> = Record<string, unknown>,
+    P extends Record<string, unknown> = Record<never, never>,
     Options = never,
   >(
     component: T,

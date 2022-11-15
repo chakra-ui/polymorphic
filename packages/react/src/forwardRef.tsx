@@ -29,14 +29,14 @@ export type OmitCommonProps<
 > = Omit<Target, 'transition' | 'as' | 'color' | OmitAdditionalProps>
 
 type AssignCommon<
-  SourceProps extends object = Record<never, never>,
-  OverrideProps extends object = Record<never, never>,
+  SourceProps extends Record<string, unknown> = Record<never, never>,
+  OverrideProps extends Record<string, unknown> = Record<never, never>,
 > = Assign<OmitCommonProps<SourceProps>, OverrideProps>
 
 type MergeWithAs<
-  ComponentProps extends object,
-  AsProps extends object,
-  AdditionalProps extends object = Record<never, never>,
+  ComponentProps extends Record<string, unknown>,
+  AsProps extends Record<string, unknown>,
+  AdditionalProps extends Record<string, unknown> = Record<never, never>,
   AsComponent extends ElementType = ElementType,
 > = AssignCommon<ComponentProps, AdditionalProps> &
   AssignCommon<AsProps, AdditionalProps> & {
@@ -45,7 +45,7 @@ type MergeWithAs<
 
 export type ComponentWithAs<
   Component extends ElementType,
-  Props extends object = Record<never, never>,
+  Props extends Record<string, unknown> = Record<never, never>,
 > = {
   <AsComponent extends ElementType = Component>(
     props: MergeWithAs<ComponentProps<Component>, ComponentProps<AsComponent>, Props, AsComponent>,
@@ -60,7 +60,7 @@ export type ComponentWithAs<
 
 export function forwardRef<
   Component extends ElementType,
-  Props extends object = Record<never, never>,
+  Props extends Record<string, unknown> = Record<never, never>,
 >(
   component: ForwardRefRenderFunction<
     unknown,
