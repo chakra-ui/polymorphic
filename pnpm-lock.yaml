@@ -73,6 +73,7 @@ importers:
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.25.1
+      clean-package: 2.1.2
       jsdom: 20.0.2
       solid-js: 1.6.1
       solid-testing-library: 0.5.0
@@ -87,6 +88,7 @@ importers:
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.25.1_jsdom@20.0.2
+      clean-package: 2.1.2
       jsdom: 20.0.2
       solid-js: 1.6.1
       solid-testing-library: 0.5.0_solid-js@1.6.1
