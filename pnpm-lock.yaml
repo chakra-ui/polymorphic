@@ -43,7 +43,7 @@ importers:
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-react': 2.2.0
       '@vitest/coverage-c8': 0.25.2
-      clean-package: 2.1.2
+      clean-package: 2.2.0
       jsdom: 20.0.2
       react: 18.2.0
       react-dom: 18.2.0
@@ -58,7 +58,7 @@ importers:
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-react': 2.2.0_vite@3.2.4
       '@vitest/coverage-c8': 0.25.2_jsdom@20.0.2
-      clean-package: 2.1.2
+      clean-package: 2.2.0
       jsdom: 20.0.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -73,7 +73,7 @@ importers:
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.25.1
-      clean-package: 2.1.2
+      clean-package: 2.2.0
       esbuild: 0.15.14
       esbuild-plugin-solid: 0.4.2
       jsdom: 20.0.2
@@ -90,7 +90,7 @@ importers:
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.25.1_jsdom@20.0.2
-      clean-package: 2.1.2
+      clean-package: 2.2.0
       esbuild: 0.15.14
       esbuild-plugin-solid: 0.4.2_e6wqvaelqp7nux2ud2r5bacjla
       jsdom: 20.0.2
@@ -1828,11 +1828,11 @@ packages:
     resolution: {integrity: sha512-yH4RezKOGlOhxkmhbeNuC4eYZKAUsEaGtBuBzDDP1eFUKiccDWzBABxBfOx31IDwDIXMTxWuwAxUGModvkbuVw==}
     dev: true
 
-  /clean-package/2.1.2:
-    resolution: {integrity: sha512-Hpmu29apdAmfzTW+B7LkxeJVqW8puYHW4P4yfd7JoxjNzmWirQZAZr1XVMqb099OmloMAuASAipo9x4qccysLw==}
+  /clean-package/2.2.0:
+    resolution: {integrity: sha512-vLv8kRqvh4smPDpqAYFPLEijTppAd/cfCz4yBcUGoVl/JKu6ZWKhlo+G/cAmwlSa29RudfBeuyiNEzas8bTwEQ==}
     hasBin: true
     dependencies:
-      dot-object: 2.1.4
+      dot-prop: 6.0.1
     dev: true
 
   /clean-stack/2.2.0:
@@ -2209,17 +2209,16 @@ packages:
       webidl-conversions: 7.0.0
     dev: true
 
-  /dot-object/2.1.4:
-    resolution: {integrity: sha512-7FXnyyCLFawNYJ+NhkqyP9Wd2yzuo+7n9pGiYpkmXCTYa8Ci2U0eUNDVg5OuO5Pm6aFXI2SWN8/N/w7SJWu1WA==}
-    hasBin: true
-    dependencies:
-      commander: 4.1.1
-      glob: 7.2.3
-    dev: true
-
   /dot-prop/5.3.0:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
     engines: {node: '>=8'}
+    dependencies:
+      is-obj: 2.0.0
+    dev: true
+
+  /dot-prop/6.0.1:
+    resolution: {integrity: sha512-tE7ztYzXHIeyvc7N+hR3oi7FIbf/NIjVP9hmAt3yMXzrQ072/fpjGLx2GxNxGxUl5V73MEqYzioOMoVhGMJ5cA==}
+    engines: {node: '>=10'}
     dependencies:
       is-obj: 2.0.0
     dev: true
