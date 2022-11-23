@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { h } from 'preact'
 import { render, screen } from '@testing-library/preact'
 import { polymorphicFactory } from '../src'
 
