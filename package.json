@@ -10,6 +10,7 @@
     "format:check": "prettier --check packages/**/src",
     "format:write": "prettier --write packages/**/src",
     "lint": "turbo run lint",
+    "preact": "pnpm --filter=@polymorphic-factory/preact",
     "prepare": "husky install",
     "react": "pnpm --filter=@polymorphic-factory/react",
     "release": "changeset publish",
