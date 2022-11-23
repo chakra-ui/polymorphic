@@ -12,6 +12,7 @@
     "lint": "turbo run lint",
     "prepare": "husky install",
     "react": "pnpm --filter=@polymorphic-factory/react",
+    "solid": "pnpm --filter=@polymorphic-factory/solid",
     "release": "changeset publish",
     "release:rc": "changeset publish --tag rc",
     "test": "turbo run test",
