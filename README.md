@@ -38,6 +38,7 @@ This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes th
 ### Packages
 
 - [react](./packages/react/README.md)
+- [preact](./packages/preact/README.md)
 - [solid](./packages/solid/README.md)
 
 ### Build
