@@ -1,6 +1,5 @@
 import { type ComponentWithAs, ElementType, forwardRef, type PropsOf } from './forwardRef'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { type JSX, h } from 'preact'
+import type { JSX } from 'preact'
 
 type DOMElements = keyof JSX.IntrinsicElements
 
