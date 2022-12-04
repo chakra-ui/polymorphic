@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/preact'
-import { polymorphicFactory } from '../src'
+import { type HTMLPolymorphicProps, polymorphicFactory } from '../src'
 
 describe('Polymorphic Factory', () => {
   describe('with default styled function', () => {
@@ -64,6 +64,28 @@ describe('Polymorphic Factory', () => {
       expect(element.nodeName).toBe('ASIDE')
       expect(element).toHaveAttribute('data-custom-styled', 'true')
       expect(element).toHaveAttribute('data-options', JSON.stringify(options))
+    })
+  })
+
+  describe('with custom component', () => {
+    const poly = polymorphicFactory()
+
+    type CustomProps = HTMLPolymorphicProps<'div'> & { customProp: 'a' | 'b' | 'c' }
+    const CustomComponent = poly((props: CustomProps) => {
+      const { customProp, ...divProps } = props
+      return <div {...divProps} data-custom={customProp} />
+    })
+
+    it('should inherit the props of a custom component', () => {
+      render(<CustomComponent data-testid="poly" customProp="a" />)
+      const element = screen.getByTestId('poly')
+      expect(element).toHaveAttribute('data-custom', 'a')
+    })
+
+    it('should expect required props', () => {
+      // @ts-expect-error Property 'customProp' is missing
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const _unused = <CustomComponent />
     })
   })
 })
