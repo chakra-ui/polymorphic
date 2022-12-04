@@ -1,5 +1,7 @@
 import {
   defineComponent,
+  h,
+  type PropType,
   type ExtractPropTypes,
   type DefineComponent,
   type AllowedComponentProps,
@@ -12,26 +14,18 @@ export type DOMElements = keyof IntrinsicElementAttributes
 
 export type ElementType = DOMElements | DefineComponent
 
-export type ComponentWithAs<
-  Component extends ElementType,
-  P extends Record<string, unknown> = Record<never, never>,
-> = {
+export type ComponentWithAs<P = Record<never, never>> = {
   new (): {
     $props: AllowedComponentProps &
       ComponentCustomProps &
-      VNodeProps &
-      ExtractPropTypes<Component> &
-      (Component extends keyof IntrinsicElementAttributes
-        ? IntrinsicElementAttributes[Component]
-        : Record<never, never>) &
-      P & {
+      VNodeProps & { props?: Record<keyof P, any> } & P & {
         as?: ElementType
       }
   }
 }
 
 export type HTMLPolymorphicComponents = {
-  [Tag in DOMElements]: ComponentWithAs<Tag>
+  [Tag in DOMElements]: ElementType
 }
 
 export type HTMLPolymorphicProps<T extends ElementType> = Omit<ExtractPropTypes<T>, 'ref'> & {
@@ -46,33 +40,32 @@ type PolymorphFactory = {
   >(
     component: T,
     option?: Options,
-  ): ComponentWithAs<T, P>
+  ): ComponentWithAs<P>
 }
 
 function defaultStyled(originalComponent: ElementType) {
   return defineComponent({
-    props: ['as'],
-    setup(props, { slots, attrs }) {
-      const Component = props.as || originalComponent
-      return () => <Component {...attrs}>{slots}</Component>
+    props: {
+      as: {
+        type: String as PropType<DOMElements>,
+        default: '',
+      },
     },
-  }) as ComponentWithAs<never>
+    setup(props, { slots, attrs }) {
+      const component = props.as || originalComponent
+      return () => h(component, attrs, slots)
+    },
+  }) as ComponentWithAs<Record<string, unknown>>
 }
 
-interface PolyFactoryParam<
-  Component extends ElementType,
-  Props extends Record<string, unknown>,
-  Options,
-> {
-  styled?: (component: Component, options?: Options) => ComponentWithAs<Component, Props>
+interface PolyFactoryParam<Component extends ElementType, Options> {
+  styled?: (component: Component, options?: Options) => ComponentWithAs
 }
 
-export function polymorphicFactory<
-  Component extends ElementType,
-  Props extends Record<string, unknown>,
-  Options = never,
->({ styled = defaultStyled }: PolyFactoryParam<Component, Props, Options> = {}) {
-  const cache = new Map<Component, ComponentWithAs<Component, Props>>()
+export function polymorphicFactory<Component extends ElementType, Options = never>({
+  styled = defaultStyled,
+}: PolyFactoryParam<Component, Options> = {}) {
+  const cache = new Map<Component, ComponentWithAs>()
 
   return new Proxy(styled, {
     /**

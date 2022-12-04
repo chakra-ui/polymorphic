@@ -52,7 +52,7 @@ import type {
   HtmlHTMLAttributes,
 } from 'vue'
 
-// This interface is not exported from `vue`
+// NOt exported from Vue
 export interface IntrinsicElementAttributes {
   a: AnchorHTMLAttributes
   abbr: HTMLAttributes

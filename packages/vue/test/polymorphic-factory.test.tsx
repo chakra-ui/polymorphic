@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/vue'
-import { polymorphicFactory } from '../src'
-import { defineComponent, h } from 'vue'
+import { describe, expect, it } from 'vitest'
+import { screen, render } from '@testing-library/vue'
+import { polymorphicFactory, type DOMElements } from '../src'
+import { defineComponent, h, type PropType } from 'vue'
 
 describe('Polymorphic factory', () => {
   describe('with default styled function', () => {
@@ -31,7 +32,12 @@ describe('Polymorphic factory', () => {
     const customPoly = polymorphicFactory({
       styled: (originalComponent, options) =>
         defineComponent({
-          props: ['as'],
+          props: {
+            as: {
+              type: String as PropType<DOMElements>,
+              default: '',
+            },
+          },
           setup(props, { slots, attrs }) {
             const component = props.as || originalComponent
 
