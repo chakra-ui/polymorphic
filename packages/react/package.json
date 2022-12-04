@@ -16,6 +16,7 @@
   "author": "Tim Kolberger <tim@kolberger.eu>",
   "license": "MIT",
   "main": "src/index.ts",
+  "clean-package": "../../clean-package.config.json",
   "sideEffects": false,
   "files": [
     "dist"
