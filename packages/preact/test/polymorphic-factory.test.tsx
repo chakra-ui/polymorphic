@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/preact'
 import { type HTMLPolymorphicProps, polymorphicFactory } from '../src'
 
 describe('Polymorphic Factory', () => {
