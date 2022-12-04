@@ -46,6 +46,6 @@
     "vitest": "0.25.2"
   },
   "peerDependencies": {
-    "preact": ">10"
+    "preact": "11.0.0-experimental.1"
   }
 }
