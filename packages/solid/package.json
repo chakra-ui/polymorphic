@@ -2,7 +2,16 @@
   "name": "@polymorphic-factory/solid",
   "version": "0.1.1",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "solid-js",
+    "typescript",
+    "jsx",
+    "headless",
+    "polymorphic",
+    "emotion",
+    "css-in-js",
+    "polymorphic-types"
+  ],
   "homepage": "https://github.com/chakra-ui/polymorphic",
   "author": "Tim Kolberger <tim@kolberger.eu>",
   "license": "MIT",

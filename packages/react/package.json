@@ -2,7 +2,16 @@
   "name": "@polymorphic-factory/react",
   "version": "0.2.0",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typescript",
+    "jsx",
+    "headless",
+    "polymorphic",
+    "emotion",
+    "css-in-js",
+    "polymorphic-types"
+  ],
   "homepage": "https://github.com/chakra-ui/polymorphic",
   "author": "Tim Kolberger <tim@kolberger.eu>",
   "license": "MIT",

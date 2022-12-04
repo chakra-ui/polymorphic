@@ -2,7 +2,16 @@
   "name": "@polymorphic-factory/preact",
   "version": "0.0.0",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "preact",
+    "typescript",
+    "jsx",
+    "headless",
+    "polymorphic",
+    "emotion",
+    "css-in-js",
+    "polymorphic-types"
+  ],
   "homepage": "https://github.com/chakra-ui/polymorphic",
   "author": "Tim Kolberger <tim@kolberger.eu>",
   "license": "MIT",
