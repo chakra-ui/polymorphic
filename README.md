@@ -6,7 +6,7 @@
   <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
 </p>
 
-Create polymorphic React/SolidJS components with a customizable `styled` function.
+Create polymorphic React/Preact/SolidJS components with a customizable `styled` function.
 
 A polymorphic component is a component that can be rendered with a different element.
 
