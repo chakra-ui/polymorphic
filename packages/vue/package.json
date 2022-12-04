@@ -1,0 +1,46 @@
+{
+  "name": "@polymorphic-factory/vue",
+  "version": "0.0.0",
+  "author": "Shyrro <zsahmane@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chakra-ui/polymorphic.git",
+    "directory": "packages/vue"
+  },
+  "bugs": {
+    "url": "https://github.com/chakra-ui/polymorphic/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsup src/index.ts",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "test": "vitest run --reporter verbose --coverage",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/vue": "^6.6.1",
+    "@types/node": "^18.11.9",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitejs/plugin-vue-jsx": "^2.1.1",
+    "@vue/tsconfig": "^0.1.3",
+    "tsup": "6.5.0",
+    "typescript": "4.9.3",
+    "vite": "3.2.4",
+    "vite-plugin-solid": "2.4.0",
+    "vitest": "0.25.3"
+  }
+}
