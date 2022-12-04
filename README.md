@@ -11,7 +11,7 @@ Create polymorphic React/Preact/SolidJS components with a customizable `styled` 
 A polymorphic component is a component that can be rendered with a different element.
 
 ```tsx
-import { polymorphicFactory } from '@polymorphic-factory/{react,solid}'
+import { polymorphicFactory } from '@polymorphic-factory/{react,preact,solid}'
 
 const poly = polymorphicFactory()
 
@@ -33,29 +33,52 @@ const App = () => (
 >
 > This is a deliberate decision to keep the usage as simple as possible.
 
-This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages:
+This monorepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages:
 
-### Packages
+## Packages
 
 - [react](./packages/react/README.md)
 - [preact](./packages/preact/README.md)
 - [solid](./packages/solid/README.md)
 
-### Build
+## Development
 
-To build all apps and packages, run the following command:
+Install the dependencies with pnpm:
 
+```sh
+pnpm install
 ```
+
+To build all packages, run the following command:
+
+```sh
 pnpm run build
 ```
 
-## Useful Links
+To execute all test suites, run the following command:
 
-Learn more about the power of Turborepo:
+```sh
+pnpm run test
+```
 
-- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
-- [Caching](https://turborepo.org/docs/core-concepts/caching)
-- [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+You can execute npm scripts in each package with the shortcut commands:
+
+```sh
+# pnpm run <package> <command>
+pnpm run react test
+pnpm run solid build
+```
+
+### Versioning
+
+This repository uses [changesets](https://github.com/changesets/changesets) to version and publish the packages.
+
+To create a semver bump, create a changeset with a summary of the changes made:
+
+```sh
+pnpm changeset
+```
+
+## License
+
+MIT © [Tim Kolberger](https://github.com/timkolberger)
