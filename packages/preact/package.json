@@ -47,13 +47,13 @@
     "@testing-library/preact": "3.2.2",
     "@types/testing-library__jest-dom": "5.14.5",
     "@preact/preset-vite": "2.4.0",
-    "@vitest/coverage-c8": "0.25.4",
+    "@vitest/coverage-c8": "0.25.5",
     "clean-package": "2.1.2",
     "jsdom": "20.0.2",
     "preact": "10.11.3",
     "typescript": "4.8.4",
     "vite": "3.2.5",
-    "vitest": "0.25.4"
+    "vitest": "0.25.5"
   },
   "peerDependencies": {
     "preact": ">=10"
