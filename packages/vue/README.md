@@ -54,12 +54,7 @@ import { defineComponent } from 'vue'
 const poly = polymorphicFactory({
   styled: (originalComponent, options) =>
     defineComponent({
-      props: {
-        as: {
-          type: String as PropType<DOMElements>,
-          default: '',
-        },
-      },
+      props: ['as'],
       setup(props, { slots, attrs }) {
         const component = props.as || originalComponent
 
