@@ -1,8 +1,9 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["test","src"],
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "jsx": "preserve"
+    "jsx": "react",
+    "jsxFactory": "h"
   },
+  "include": [
+    "src", "test"]
 }

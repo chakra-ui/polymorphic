@@ -10,9 +10,6 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     css: false,
-    transformMode: {
-      web: [/\.[jt]sx$/],
-    },
   },
   plugins: [vueJsx()],
 })
