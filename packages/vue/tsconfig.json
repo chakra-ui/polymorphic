@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
-    "jsxFactory": "h"
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment"
   },
   "include": ["src", "test"]
 }

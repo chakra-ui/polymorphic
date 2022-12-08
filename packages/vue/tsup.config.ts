@@ -7,4 +7,5 @@ export default defineConfig({
   outExtension(ctx) {
     return { js: `.${ctx.format}.js` }
   },
+  inject: ['./src/jsx-inject.ts'],
 })

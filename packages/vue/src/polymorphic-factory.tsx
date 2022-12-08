@@ -4,7 +4,6 @@ import {
   type DefineComponent,
   defineComponent,
   type ExtractPropTypes,
-  h,
   type VNodeProps,
 } from 'vue'
 import type { IntrinsicElementAttributes } from './dom.types'
@@ -55,7 +54,7 @@ function defaultStyled(originalComponent: ElementType) {
     props: ['as'],
     setup(props, { slots, attrs }) {
       const Component = props.as || originalComponent
-      return () => h(Component, attrs, slots)
+      return () => <Component {...attrs}>{slots}</Component>
     },
   }) as ComponentWithAs<never>
 }
