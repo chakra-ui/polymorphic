@@ -19,7 +19,8 @@
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "version": "changeset version",
-    "version:rc": "changeset version --snapshot rc"
+    "version:rc": "changeset version --snapshot rc",
+    "vue": "pnpm --filter=@polymorphic-factory/vue"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.7",

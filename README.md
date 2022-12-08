@@ -6,12 +6,12 @@
   <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
 </p>
 
-Create polymorphic React/Preact/SolidJS components with a customizable `styled` function.
+Create polymorphic React/Preact/SolidJS/Vue components with a customizable `styled` function.
 
 A polymorphic component is a component that can be rendered with a different element.
 
 ```tsx
-import { polymorphicFactory } from '@polymorphic-factory/{react,preact,solid}'
+import { polymorphicFactory } from '@polymorphic-factory/{react,preact,solid,vue}'
 
 const poly = polymorphicFactory()
 
@@ -40,6 +40,7 @@ This monorepo uses [pnpm](https://pnpm.io) as a package manager. It includes the
 - [react](./packages/react/README.md)
 - [preact](./packages/preact/README.md)
 - [solid](./packages/solid/README.md)
+- [vue](./packages/vue/README.md)
 
 ## Development
 
