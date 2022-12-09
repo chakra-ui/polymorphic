@@ -134,7 +134,7 @@ importers:
       '@testing-library/vue': 6.6.1
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
-      '@vitejs/plugin-vue-jsx': 2.1.1
+      '@vitejs/plugin-vue-jsx': 3.0.0
       '@vitest/coverage-c8': 0.25.5
       clean-package: 2.2.0
       jsdom: 20.0.3
@@ -148,7 +148,7 @@ importers:
       '@testing-library/vue': 6.6.1_vue@3.2.45
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
-      '@vitejs/plugin-vue-jsx': 2.1.1_vite@3.2.5+vue@3.2.45
+      '@vitejs/plugin-vue-jsx': 3.0.0_vite@3.2.5+vue@3.2.45
       '@vitest/coverage-c8': 0.25.5_jsdom@20.0.3
       clean-package: 2.2.0
       jsdom: 20.0.3
@@ -467,7 +467,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/helper-plugin-utils': 7.19.0
+      '@babel/helper-plugin-utils': 7.20.2
     dev: true
 
   /@babel/plugin-syntax-jsx/7.18.6_@babel+core@7.19.6:
@@ -477,7 +477,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.19.6
-      '@babel/helper-plugin-utils': 7.19.0
+      '@babel/helper-plugin-utils': 7.20.2
     dev: true
 
   /@babel/plugin-syntax-jsx/7.18.6_@babel+core@7.20.5:
@@ -487,7 +487,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.20.5
-      '@babel/helper-plugin-utils': 7.19.0
+      '@babel/helper-plugin-utils': 7.20.2
     dev: true
 
   /@babel/plugin-syntax-typescript/7.20.0_@babel+core@7.19.6:
@@ -646,24 +646,6 @@ packages:
       '@babel/code-frame': 7.18.6
       '@babel/parser': 7.20.5
       '@babel/types': 7.20.5
-    dev: true
-
-  /@babel/traverse/7.20.0:
-    resolution: {integrity: sha512-5+cAXQNARgjRUK0JWu2UBwja4JLSO/rBMPJzpsKb+oBF5xlUuCfljQepS4XypBQoiigL0VQjTZy6WiONtUdScQ==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/code-frame': 7.18.6
-      '@babel/generator': 7.20.5
-      '@babel/helper-environment-visitor': 7.18.9
-      '@babel/helper-function-name': 7.19.0
-      '@babel/helper-hoist-variables': 7.18.6
-      '@babel/helper-split-export-declaration': 7.18.6
-      '@babel/parser': 7.20.5
-      '@babel/types': 7.20.5
-      debug: 4.3.4
-      globals: 11.12.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@babel/traverse/7.20.5:
@@ -1889,16 +1871,16 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue-jsx/2.1.1_vite@3.2.5+vue@3.2.45:
-    resolution: {integrity: sha512-JgDhxstQlwnHBvZ1BSnU5mbmyQ14/t5JhREc6YH5kWyu2QdAAOsLF6xgHoIWarj8tddaiwFrNzLbWJPudpXKYA==}
+  /@vitejs/plugin-vue-jsx/3.0.0_vite@3.2.5+vue@3.2.45:
+    resolution: {integrity: sha512-vurkuzgac5SYuxd2HUZqAFAWGTF10diKBwJNbCvnWijNZfXd+7jMtqjPFbGt7idOJUn584fP1Ar9j/GN2jQ3Ew==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: ^3.0.0
+      vite: ^4.0.0
       vue: ^3.0.0
     dependencies:
-      '@babel/core': 7.19.6
-      '@babel/plugin-transform-typescript': 7.20.2_@babel+core@7.19.6
-      '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.19.6
+      '@babel/core': 7.20.5
+      '@babel/plugin-transform-typescript': 7.20.2_@babel+core@7.20.5
+      '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.20.5
       vite: 3.2.5
       vue: 3.2.45
     transitivePeerDependencies:
@@ -1966,14 +1948,14 @@ packages:
     resolution: {integrity: sha512-hz4R8tS5jMn8lDq6iD+yWL6XNB699pGIVLk7WSJnn1dbpjaazsjZQkieJoRX6gW5zpYSCFqQ7jUquPNY65tQYA==}
     dev: true
 
-  /@vue/babel-plugin-jsx/1.1.1_@babel+core@7.19.6:
+  /@vue/babel-plugin-jsx/1.1.1_@babel+core@7.20.5:
     resolution: {integrity: sha512-j2uVfZjnB5+zkcbc/zsOc0fSNGCMMjaEXP52wdwdIfn0qjFfEYpYZBFKFg+HHnQeJCVrjOeO0YxgaL7DMrym9w==}
     dependencies:
       '@babel/helper-module-imports': 7.18.6
-      '@babel/plugin-syntax-jsx': 7.18.6_@babel+core@7.19.6
+      '@babel/plugin-syntax-jsx': 7.18.6_@babel+core@7.20.5
       '@babel/template': 7.18.10
-      '@babel/traverse': 7.20.0
-      '@babel/types': 7.20.0
+      '@babel/traverse': 7.20.5
+      '@babel/types': 7.20.5
       '@vue/babel-helper-vue-transform-on': 1.0.2
       camelcase: 6.3.0
       html-tags: 3.2.0
@@ -2275,7 +2257,7 @@ packages:
       '@babel/core': 7.19.6
       '@babel/helper-module-imports': 7.16.0
       '@babel/plugin-syntax-jsx': 7.18.6_@babel+core@7.19.6
-      '@babel/types': 7.20.0
+      '@babel/types': 7.20.5
       html-entities: 2.3.2
     dev: true
 
