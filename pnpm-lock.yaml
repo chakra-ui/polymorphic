@@ -40,25 +40,25 @@ importers:
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/preact': 3.2.2
       '@types/testing-library__jest-dom': 5.14.5
-      '@vitest/coverage-c8': 0.25.6
+      '@vitest/coverage-c8': 0.25.7
       clean-package: 2.1.2
       jsdom: 20.0.2
       preact: 10.11.3
       typescript: 4.9.4
       vite: 4.0.0
-      vitest: 0.25.6
+      vitest: 0.25.7
     devDependencies:
       '@preact/preset-vite': 2.4.0_preact@10.11.3+vite@4.0.0
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/preact': 3.2.2_preact@10.11.3
       '@types/testing-library__jest-dom': 5.14.5
-      '@vitest/coverage-c8': 0.25.6_jsdom@20.0.2
+      '@vitest/coverage-c8': 0.25.7_jsdom@20.0.2
       clean-package: 2.1.2
       jsdom: 20.0.2
       preact: 10.11.3
       typescript: 4.9.4
       vite: 4.0.0
-      vitest: 0.25.6_jsdom@20.0.2
+      vitest: 0.25.7_jsdom@20.0.2
 
   packages/react:
     specifiers:
@@ -68,14 +68,14 @@ importers:
       '@types/react-dom': 18.0.9
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-react': 3.0.0
-      '@vitest/coverage-c8': 0.25.6
+      '@vitest/coverage-c8': 0.25.7
       clean-package: 2.2.0
       jsdom: 20.0.3
       react: 18.2.0
       react-dom: 18.2.0
       typescript: 4.9.4
       vite: 4.0.0
-      vitest: 0.25.6
+      vitest: 0.25.7
     devDependencies:
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
@@ -83,14 +83,14 @@ importers:
       '@types/react-dom': 18.0.9
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-react': 3.0.0_vite@4.0.0
-      '@vitest/coverage-c8': 0.25.6_jsdom@20.0.3
+      '@vitest/coverage-c8': 0.25.7_jsdom@20.0.3
       clean-package: 2.2.0
       jsdom: 20.0.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.9.4
       vite: 4.0.0
-      vitest: 0.25.6_jsdom@20.0.3
+      vitest: 0.25.7_jsdom@20.0.3
 
   packages/solid:
     specifiers:
@@ -98,7 +98,7 @@ importers:
       '@testing-library/jest-dom': 5.16.5
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
-      '@vitest/coverage-c8': 0.25.6
+      '@vitest/coverage-c8': 0.25.7
       clean-package: 2.2.0
       esbuild: 0.16.4
       esbuild-plugin-solid: 0.4.2
@@ -109,13 +109,13 @@ importers:
       typescript: 4.9.4
       vite: 4.0.0
       vite-plugin-solid: 2.5.0
-      vitest: 0.25.6
+      vitest: 0.25.7
     devDependencies:
       '@testing-library/dom': 8.19.0
       '@testing-library/jest-dom': 5.16.5
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
-      '@vitest/coverage-c8': 0.25.6_jsdom@20.0.3
+      '@vitest/coverage-c8': 0.25.7_jsdom@20.0.3
       clean-package: 2.2.0
       esbuild: 0.16.4
       esbuild-plugin-solid: 0.4.2_kdb2hatd2mxjlyoahxu5lkmnie
@@ -126,7 +126,7 @@ importers:
       typescript: 4.9.4
       vite: 4.0.0
       vite-plugin-solid: 2.5.0_solid-js@1.6.4+vite@4.0.0
-      vitest: 0.25.6_jsdom@20.0.3
+      vitest: 0.25.7_jsdom@20.0.3
 
   packages/vue:
     specifiers:
@@ -135,13 +135,13 @@ importers:
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-vue-jsx': 3.0.0
-      '@vitest/coverage-c8': 0.25.5
+      '@vitest/coverage-c8': 0.25.7
       clean-package: 2.2.0
       jsdom: 20.0.3
       tsup: 6.5.0
       typescript: 4.9.3
       vite: 4.0.0
-      vitest: 0.25.5
+      vitest: 0.25.7
       vue: 3.2.45
     devDependencies:
       '@testing-library/jest-dom': 5.16.5
@@ -149,13 +149,13 @@ importers:
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.0.0+vue@3.2.45
-      '@vitest/coverage-c8': 0.25.5_jsdom@20.0.3
+      '@vitest/coverage-c8': 0.25.7_jsdom@20.0.3
       clean-package: 2.2.0
       jsdom: 20.0.3
       tsup: 6.5.0_typescript@4.9.3
       typescript: 4.9.3
       vite: 4.0.0
-      vitest: 0.25.5_jsdom@20.0.3
+      vitest: 0.25.7_jsdom@20.0.3
       vue: 3.2.45
 
 packages:
@@ -1861,11 +1861,11 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/coverage-c8/0.25.5_jsdom@20.0.3:
-    resolution: {integrity: sha512-tXlg0QVkTQ+7dqhsuwRFovP5vjgYGyBrRREFS55IQ20IsiSaRug9sRblRsckTXmGtz1OMJy/Lxv1gFVo24/ipA==}
+  /@vitest/coverage-c8/0.25.7_jsdom@20.0.2:
+    resolution: {integrity: sha512-TEoYjW4YIDXKCMmLqduIGpIq2JmlhE3M0Q68apjNM0ljrJyEvYpaDI5b7OyfXbAJjhmZvIlfEZfZnmhbExHLHg==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.25.5_jsdom@20.0.3
+      vitest: 0.25.7_jsdom@20.0.2
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -1880,30 +1880,11 @@ packages:
       - terser
     dev: true
 
-  /@vitest/coverage-c8/0.25.6_jsdom@20.0.2:
-    resolution: {integrity: sha512-+Bcs1XZ8CuEe52QSOgzqmqiV82CXZRRj3yclPQqtLkUV4S6+kdOdfRTtMHOilwhZH70giDjBQx3jgiZoYgFVMA==}
+  /@vitest/coverage-c8/0.25.7_jsdom@20.0.3:
+    resolution: {integrity: sha512-TEoYjW4YIDXKCMmLqduIGpIq2JmlhE3M0Q68apjNM0ljrJyEvYpaDI5b7OyfXbAJjhmZvIlfEZfZnmhbExHLHg==}
     dependencies:
       c8: 7.12.0
-      vitest: 0.25.6_jsdom@20.0.2
-    transitivePeerDependencies:
-      - '@edge-runtime/vm'
-      - '@vitest/browser'
-      - '@vitest/ui'
-      - happy-dom
-      - jsdom
-      - less
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    dev: true
-
-  /@vitest/coverage-c8/0.25.6_jsdom@20.0.3:
-    resolution: {integrity: sha512-+Bcs1XZ8CuEe52QSOgzqmqiV82CXZRRj3yclPQqtLkUV4S6+kdOdfRTtMHOilwhZH70giDjBQx3jgiZoYgFVMA==}
-    dependencies:
-      c8: 7.12.0
-      vitest: 0.25.6_jsdom@20.0.3
+      vitest: 0.25.7_jsdom@20.0.3
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@vitest/browser'
@@ -6199,40 +6180,6 @@ packages:
       - supports-color
     dev: true
 
-  /vite/3.2.5_@types+node@18.11.11:
-    resolution: {integrity: sha512-4mVEpXpSOgrssFZAOmGIr85wPHKvaDAcXqxVxVRZhljkJOMZi1ibLibzjLHzJvcok8BMguLc7g1W6W/GqZbLdQ==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      '@types/node': 18.11.11
-      esbuild: 0.15.18
-      postcss: 8.4.19
-      resolve: 1.22.1
-      rollup: 2.79.1
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
   /vite/4.0.0:
     resolution: {integrity: sha512-ynad+4kYs8Jcnn8J7SacS9vAbk7eMy0xWg6E7bAhS1s79TK+D7tVFGXVZ55S7RNLRROU1rxoKlvZ/qjaB41DGA==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -6266,6 +6213,40 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /vite/4.0.0_@types+node@18.11.13:
+    resolution: {integrity: sha512-ynad+4kYs8Jcnn8J7SacS9vAbk7eMy0xWg6E7bAhS1s79TK+D7tVFGXVZ55S7RNLRROU1rxoKlvZ/qjaB41DGA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      '@types/node': 18.11.13
+      esbuild: 0.16.4
+      postcss: 8.4.19
+      resolve: 1.22.1
+      rollup: 3.7.0
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /vitefu/0.2.3_vite@4.0.0:
     resolution: {integrity: sha512-75l7TTuU8isAhz1QFtNKjDkqjxvndfMC1AfIMjJ0ZQ59ZD0Ow9QOIsJJX16Wv9PS8f+zMzp6fHy5cCbKG/yVUQ==}
     peerDependencies:
@@ -6277,8 +6258,8 @@ packages:
       vite: 4.0.0
     dev: true
 
-  /vitest/0.25.5_jsdom@20.0.3:
-    resolution: {integrity: sha512-lFKSTZV+AjuL44/yNC0aDPKTiasYSqOQ97Gg2G4P2LnjyzQ21ZUs4rQOscHK3lrSnVuir3+1QavHzbDgH4tWQA==}
+  /vitest/0.25.7_jsdom@20.0.2:
+    resolution: {integrity: sha512-lJ+Ue+v8kHl2JzjaKHJ9u5Yo/loU7zrWK2/Whn8OKQjtq5G7nkeWfXuq3elZaC8xKdkdIuWiiIicaNBG1F5yzg==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -6301,53 +6282,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
-      '@types/node': 18.11.11
-      acorn: 8.8.1
-      acorn-walk: 8.2.0
-      chai: 4.3.6
-      debug: 4.3.4
-      jsdom: 20.0.3
-      local-pkg: 0.4.2
-      source-map: 0.6.1
-      strip-literal: 1.0.0
-      tinybench: 2.3.1
-      tinypool: 0.3.0
-      tinyspy: 1.0.2
-      vite: 3.2.5_@types+node@18.11.11
-    transitivePeerDependencies:
-      - less
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    dev: true
-
-  /vitest/0.25.6_jsdom@20.0.2:
-    resolution: {integrity: sha512-jdPgmZ7BcDnm1+hmMPIl9BZjSy+b8Y8V0tQMsv7ECO90Qic7EZ5/+traILXLpsXgqK5KgVrUJmchevAUuKL/1w==}
-    engines: {node: '>=v14.16.0'}
-    hasBin: true
-    peerDependencies:
-      '@edge-runtime/vm': '*'
-      '@vitest/browser': '*'
-      '@vitest/ui': '*'
-      happy-dom: '*'
-      jsdom: '*'
-    peerDependenciesMeta:
-      '@edge-runtime/vm':
-        optional: true
-      '@vitest/browser':
-        optional: true
-      '@vitest/ui':
-        optional: true
-      happy-dom:
-        optional: true
-      jsdom:
-        optional: true
-    dependencies:
-      '@types/chai': 4.3.3
-      '@types/chai-subset': 1.3.3
-      '@types/node': 18.11.11
+      '@types/node': 18.11.13
       acorn: 8.8.1
       acorn-walk: 8.2.0
       chai: 4.3.6
@@ -6359,7 +6294,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.2.5_@types+node@18.11.11
+      vite: 4.0.0_@types+node@18.11.13
     transitivePeerDependencies:
       - less
       - sass
@@ -6369,8 +6304,8 @@ packages:
       - terser
     dev: true
 
-  /vitest/0.25.6_jsdom@20.0.3:
-    resolution: {integrity: sha512-jdPgmZ7BcDnm1+hmMPIl9BZjSy+b8Y8V0tQMsv7ECO90Qic7EZ5/+traILXLpsXgqK5KgVrUJmchevAUuKL/1w==}
+  /vitest/0.25.7_jsdom@20.0.3:
+    resolution: {integrity: sha512-lJ+Ue+v8kHl2JzjaKHJ9u5Yo/loU7zrWK2/Whn8OKQjtq5G7nkeWfXuq3elZaC8xKdkdIuWiiIicaNBG1F5yzg==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -6393,7 +6328,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
-      '@types/node': 18.11.11
+      '@types/node': 18.11.13
       acorn: 8.8.1
       acorn-walk: 8.2.0
       chai: 4.3.6
@@ -6405,7 +6340,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.2.5_@types+node@18.11.11
+      vite: 4.0.0_@types+node@18.11.13
     transitivePeerDependencies:
       - less
       - sass
