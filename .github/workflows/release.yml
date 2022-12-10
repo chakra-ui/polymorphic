@@ -5,6 +5,8 @@ on:
     paths:
       - '.changeset/**'
       - 'packages/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
     branches:
       - main
 
