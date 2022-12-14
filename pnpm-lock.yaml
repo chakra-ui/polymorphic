@@ -36,7 +36,7 @@ importers:
 
   packages/preact:
     specifiers:
-      '@preact/preset-vite': 2.4.0
+      '@preact/preset-vite': 2.5.0
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/preact': 3.2.2
       '@types/testing-library__jest-dom': 5.14.5
@@ -48,7 +48,7 @@ importers:
       vite: 4.0.1
       vitest: 0.25.8
     devDependencies:
-      '@preact/preset-vite': 2.4.0_preact@10.11.3+vite@4.0.1
+      '@preact/preset-vite': 2.5.0_preact@10.11.3+vite@4.0.1
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/preact': 3.2.2_preact@10.11.3
       '@types/testing-library__jest-dom': 5.14.5
@@ -381,11 +381,6 @@ packages:
       '@babel/types': 7.20.5
     dev: true
 
-  /@babel/helper-plugin-utils/7.19.0:
-    resolution: {integrity: sha512-40Ryx7I8mT+0gaNxm8JGTZFUITNqdLAgdg0hXzeVZxVD6nFsdhQvip6v8dqkRHzsz1VFpFAaOCHNn0vKBL7Czw==}
-    engines: {node: '>=6.9.0'}
-    dev: true
-
   /@babel/helper-plugin-utils/7.20.2:
     resolution: {integrity: sha512-8RvlJG2mj4huQ4pZ+rU9lqKi9ZKiRmuvGuM2HlWmkmgOhbs6zEAw6IEiJ5cQqGbDzGZOhwuOQNtZMi/ENLjZoQ==}
     engines: {node: '>=6.9.0'}
@@ -547,9 +542,9 @@ packages:
     dependencies:
       '@babel/helper-annotate-as-pure': 7.18.6
       '@babel/helper-module-imports': 7.18.6
-      '@babel/helper-plugin-utils': 7.19.0
+      '@babel/helper-plugin-utils': 7.20.2
       '@babel/plugin-syntax-jsx': 7.18.6
-      '@babel/types': 7.20.0
+      '@babel/types': 7.20.5
     dev: true
 
   /@babel/plugin-transform-typescript/7.20.2_@babel+core@7.19.6:
@@ -640,15 +635,6 @@ packages:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@babel/types/7.20.0:
-    resolution: {integrity: sha512-Jlgt3H0TajCW164wkTOTzHkZb075tMQMULzrLUoUeKmO7eFL96GgDxf7/Axhc5CAuKE3KFyVW1p6ysKsi2oXAg==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.19.4
-      '@babel/helper-validator-identifier': 7.19.1
-      to-fast-properties: 2.0.0
     dev: true
 
   /@babel/types/7.20.5:
@@ -1609,11 +1595,11 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@preact/preset-vite/2.4.0_preact@10.11.3+vite@4.0.1:
-    resolution: {integrity: sha512-EiUMHuiCThuTuK+eH2r5uDg+CJbbt4aWJGePuszrHuXUpRv6WAeO4S+/DTJsEHtPtGmPRR3cLQ68N5097eOSRA==}
+  /@preact/preset-vite/2.5.0_preact@10.11.3+vite@4.0.1:
+    resolution: {integrity: sha512-BUhfB2xQ6ex0yPkrT1Z3LbfPzjpJecOZwQ/xJrXGFSZD84+ObyS//41RdEoQCMWsM0t7UHGaujUxUBub7WM1Jw==}
     peerDependencies:
       '@babel/core': 7.x
-      vite: 2.x || 3.x
+      vite: 2.x || 3.x || 4.x
     dependencies:
       '@babel/plugin-transform-react-jsx': 7.19.0
       '@babel/plugin-transform-react-jsx-development': 7.18.6
