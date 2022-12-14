@@ -5,4 +5,4 @@
 '@polymorphic-factory/vue': patch
 ---
 
-Fixed an issue where the esm export was picked up as cjs.
+Fixed an issue where the ESM export was picked up as CJS.
