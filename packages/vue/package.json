@@ -1,6 +1,6 @@
 {
   "name": "@polymorphic-factory/vue",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Shyrro <zsahmane@gmail.com>",
   "license": "MIT",
   "main": "src/index.ts",
