@@ -41,7 +41,7 @@ importers:
       '@testing-library/preact': 3.2.2
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.25.8
-      clean-package: 2.1.2
+      clean-package: 2.2.0
       jsdom: 20.0.3
       preact: 10.11.3
       typescript: 4.9.4
@@ -53,7 +53,7 @@ importers:
       '@testing-library/preact': 3.2.2_preact@10.11.3
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.25.8_jsdom@20.0.3
-      clean-package: 2.1.2
+      clean-package: 2.2.0
       jsdom: 20.0.3
       preact: 10.11.3
       typescript: 4.9.4
@@ -2612,13 +2612,6 @@ packages:
     resolution: {integrity: sha512-yH4RezKOGlOhxkmhbeNuC4eYZKAUsEaGtBuBzDDP1eFUKiccDWzBABxBfOx31IDwDIXMTxWuwAxUGModvkbuVw==}
     dev: true
 
-  /clean-package/2.1.2:
-    resolution: {integrity: sha512-Hpmu29apdAmfzTW+B7LkxeJVqW8puYHW4P4yfd7JoxjNzmWirQZAZr1XVMqb099OmloMAuASAipo9x4qccysLw==}
-    hasBin: true
-    dependencies:
-      dot-object: 2.1.4
-    dev: true
-
   /clean-package/2.2.0:
     resolution: {integrity: sha512-vLv8kRqvh4smPDpqAYFPLEijTppAd/cfCz4yBcUGoVl/JKu6ZWKhlo+G/cAmwlSa29RudfBeuyiNEzas8bTwEQ==}
     hasBin: true
@@ -3002,14 +2995,6 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       webidl-conversions: 7.0.0
-    dev: true
-
-  /dot-object/2.1.4:
-    resolution: {integrity: sha512-7FXnyyCLFawNYJ+NhkqyP9Wd2yzuo+7n9pGiYpkmXCTYa8Ci2U0eUNDVg5OuO5Pm6aFXI2SWN8/N/w7SJWu1WA==}
-    hasBin: true
-    dependencies:
-      commander: 4.1.1
-      glob: 7.2.3
     dev: true
 
   /dot-prop/5.3.0:
