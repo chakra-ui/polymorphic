@@ -139,7 +139,7 @@ importers:
       clean-package: 2.2.0
       jsdom: 20.0.3
       tsup: 6.5.0
-      typescript: 4.9.3
+      typescript: 4.9.4
       vite: 4.0.1
       vitest: 0.25.8
       vue: 3.2.45
@@ -152,8 +152,8 @@ importers:
       '@vitest/coverage-c8': 0.25.8_jsdom@20.0.3
       clean-package: 2.2.0
       jsdom: 20.0.3
-      tsup: 6.5.0_typescript@4.9.3
-      typescript: 4.9.3
+      tsup: 6.5.0_typescript@4.9.4
+      typescript: 4.9.4
       vite: 4.0.1
       vitest: 0.25.8_jsdom@20.0.3
       vue: 3.2.45
@@ -6030,42 +6030,6 @@ packages:
       - ts-node
     dev: true
 
-  /tsup/6.5.0_typescript@4.9.3:
-    resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
-    engines: {node: '>=14'}
-    hasBin: true
-    peerDependencies:
-      '@swc/core': ^1
-      postcss: ^8.4.12
-      typescript: ^4.1.0
-    peerDependenciesMeta:
-      '@swc/core':
-        optional: true
-      postcss:
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      bundle-require: 3.1.2_esbuild@0.15.18
-      cac: 6.7.14
-      chokidar: 3.5.3
-      debug: 4.3.4
-      esbuild: 0.15.18
-      execa: 5.1.1
-      globby: 11.1.0
-      joycon: 3.1.1
-      postcss-load-config: 3.1.4
-      resolve-from: 5.0.0
-      rollup: 3.3.0
-      source-map: 0.8.0-beta.0
-      sucrase: 3.28.0
-      tree-kill: 1.2.2
-      typescript: 4.9.3
-    transitivePeerDependencies:
-      - supports-color
-      - ts-node
-    dev: true
-
   /tsup/6.5.0_typescript@4.9.4:
     resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
     engines: {node: '>=14'}
@@ -6234,12 +6198,6 @@ packages:
   /type-fest/0.8.1:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
-    dev: true
-
-  /typescript/4.9.3:
-    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
     dev: true
 
   /typescript/4.9.4:
