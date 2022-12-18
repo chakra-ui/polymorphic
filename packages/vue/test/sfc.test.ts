@@ -32,7 +32,7 @@ describe('SFC related features', () => {
 
     await fireEvent.change(select, { target: { value: 2 } })
 
-    const options = screen.getAllByRole("option")
+    const options: HTMLOptionElement[] = screen.getAllByRole("option")
 
     expect(options[0].selected).toBeFalsy()
     expect(options[1].selected).toBeTruthy()
