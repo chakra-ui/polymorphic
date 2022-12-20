@@ -134,6 +134,7 @@ importers:
       '@testing-library/vue': 6.6.1
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
+      '@vitejs/plugin-vue': 4.0.0
       '@vitejs/plugin-vue-jsx': 3.0.0
       '@vitest/coverage-c8': 0.26.0
       clean-package: 2.2.0
@@ -148,6 +149,7 @@ importers:
       '@testing-library/vue': 6.6.1_vue@3.2.45
       '@types/jsdom': 20.0.1
       '@types/testing-library__jest-dom': 5.14.5
+      '@vitejs/plugin-vue': 4.0.0_vite@4.0.2+vue@3.2.45
       '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.0.2+vue@3.2.45
       '@vitest/coverage-c8': 0.26.0_jsdom@20.0.3
       clean-package: 2.2.0
@@ -2051,6 +2053,17 @@ packages:
       vue: 3.2.45
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@vitejs/plugin-vue/4.0.0_vite@4.0.2+vue@3.2.45:
+    resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.0.0
+      vue: ^3.2.25
+    dependencies:
+      vite: 4.0.2
+      vue: 3.2.45
     dev: true
 
   /@vitest/coverage-c8/0.26.0_jsdom@20.0.3:

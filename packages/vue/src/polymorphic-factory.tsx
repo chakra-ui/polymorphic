@@ -2,11 +2,14 @@ import {
   type AllowedComponentProps,
   type ComponentCustomProps,
   type DefineComponent,
+  h,
   defineComponent,
   type ExtractPropTypes,
   type VNodeProps,
+  computed,
 } from 'vue'
 import type { IntrinsicElementAttributes } from './dom.types'
+import { useVModel } from './use-v-model'
 
 export type DOMElements = keyof IntrinsicElementAttributes
 
@@ -51,10 +54,19 @@ type PolymorphFactory = {
 
 function defaultStyled(originalComponent: ElementType) {
   return defineComponent({
-    props: ['as'],
-    setup(props, { slots, attrs }) {
+    props: ['as', 'modelValue'],
+    emits: ['update:modelValue', 'input', 'change'],
+    setup(props, { slots, attrs, emit }) {
       const Component = props.as || originalComponent
-      return () => <Component {...attrs}>{slots}</Component>
+      const vmodelAttrs = computed(() =>
+        useVModel(Component as string, props.modelValue, emit, attrs),
+      )
+
+      return () => (
+        <Component {...vmodelAttrs.value} {...attrs}>
+          {slots?.default?.()}
+        </Component>
+      )
     },
   }) as ComponentWithAs<never>
 }
