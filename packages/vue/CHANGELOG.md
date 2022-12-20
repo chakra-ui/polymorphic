@@ -1,5 +1,11 @@
 # @polymorphic-factory/vue
 
+## 0.2.0
+
+### Minor Changes
+
+- [#110](https://github.com/chakra-ui/polymorphic/pull/110) [`4ebff82`](https://github.com/chakra-ui/polymorphic/commit/4ebff82b78aaa75e478f334093d34b07af39a7c3) Thanks [@Shyrro](https://github.com/Shyrro)! - Polymorphic Vue components now support the v-model directive.
+
 ## 0.1.0
 
 ### Minor Changes
