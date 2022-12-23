@@ -37,13 +37,13 @@
     "@types/testing-library__jest-dom": "5.14.5",
     "@vitejs/plugin-vue": "4.0.0",
     "@vitejs/plugin-vue-jsx": "3.0.0",
-    "@vitest/coverage-c8": "0.26.0",
+    "@vitest/coverage-c8": "0.26.2",
     "clean-package": "2.2.0",
     "jsdom": "20.0.3",
     "tsup": "6.5.0",
     "typescript": "4.9.4",
     "vite": "4.0.3",
-    "vitest": "0.26.1",
+    "vitest": "0.26.2",
     "vue": "3.2.45"
   },
   "peerDependencies": {
