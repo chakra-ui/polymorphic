@@ -8,7 +8,7 @@ importers:
       '@changesets/cli': 2.26.0
       '@commitlint/cli': 17.3.0
       '@commitlint/config-conventional': 17.3.0
-      '@types/node': 18.11.17
+      '@types/node': 18.11.18
       '@typescript-eslint/eslint-plugin': 5.47.0
       '@typescript-eslint/parser': 5.47.0
       eslint: 8.30.0
@@ -23,7 +23,7 @@ importers:
       '@changesets/cli': 2.26.0
       '@commitlint/cli': 17.3.0
       '@commitlint/config-conventional': 17.3.0
-      '@types/node': 18.11.17
+      '@types/node': 18.11.18
       '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
       '@typescript-eslint/parser': 5.47.0_lzzuuodtsqwxnvqeq4g4likcqa
       eslint: 8.30.0
@@ -1316,7 +1316,7 @@ packages:
       '@jest/schemas': 29.0.0
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 18.11.17
+      '@types/node': 18.11.18
       '@types/yargs': 17.0.13
       chalk: 4.1.2
     dev: true
@@ -1650,6 +1650,10 @@ packages:
 
   /@types/node/18.11.17:
     resolution: {integrity: sha512-HJSUJmni4BeDHhfzn6nF0sVmd1SMezP7/4F0Lq+aXzmp2xm9O7WXrUtHW/CHlYVtZUbByEvWidHqRtcJXGF2Ng==}
+    dev: true
+
+  /@types/node/18.11.18:
+    resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -4169,7 +4173,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.2.1
-      '@types/node': 18.11.17
+      '@types/node': 18.11.18
       chalk: 4.1.2
       ci-info: 3.5.0
       graceful-fs: 4.2.10
