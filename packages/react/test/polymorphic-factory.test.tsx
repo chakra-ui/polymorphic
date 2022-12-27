@@ -84,8 +84,25 @@ describe('Polymorphic Factory', () => {
 
     it('should expect required props', () => {
       // @ts-expect-error Property 'customProp' is missing
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const _unused = <CustomComponent />
+      render(<CustomComponent />)
+    })
+  })
+
+  describe('with custom props', () => {
+    const poly = polymorphicFactory<{ customProp: 'a' | 'b' | 'c' }>()
+
+    it('should allow custom props', () => {
+      render(<poly.div customProp="a" />)
+    })
+
+    it('should expect required props', () => {
+      // @ts-expect-error Property 'customProp' is missing
+      render(<poly.div />)
+    })
+
+    it('should expect required props with `as` prop', () => {
+      // @ts-expect-error Property 'customProp' is missing
+      render(<poly.div as="input" />)
     })
   })
 })
