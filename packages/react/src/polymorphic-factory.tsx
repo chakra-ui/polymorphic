@@ -13,8 +13,11 @@ export type HTMLPolymorphicProps<T extends ElementType> = Omit<PropsOf<T>, 'ref'
   as?: ElementType
 }
 
-type PolymorphFactory<Props extends Record<string, unknown> = Record<never, never>> = {
-  <T extends ElementType, P extends Record<string, unknown> = Props, Options = never>(
+type PolymorphFactory<
+  Props extends Record<string, unknown> = Record<never, never>,
+  Options = never,
+> = {
+  <T extends ElementType, P extends Record<string, unknown> = Props>(
     component: T,
     option?: Options,
   ): ComponentWithAs<T, P>
@@ -72,5 +75,5 @@ export function polymorphicFactory<
       }
       return cache.get(asElement)
     },
-  }) as PolymorphFactory<Props> & HTMLPolymorphicComponents<Props>
+  }) as PolymorphFactory<Props, Options> & HTMLPolymorphicComponents<Props>
 }

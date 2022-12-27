@@ -26,7 +26,7 @@ describe('Polymorphic Factory', () => {
   })
 
   describe('with custom styled function', () => {
-    const customPoly = polymorphicFactory({
+    const customPoly = polymorphicFactory<Record<never, never>, { customOption?: string }>({
       styled: (component, options) => (props) => {
         const Component = props.as || component
         return <Component data-custom-styled data-options={JSON.stringify(options)} {...props} />
