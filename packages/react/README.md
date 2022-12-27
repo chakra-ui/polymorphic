@@ -12,12 +12,6 @@ Create polymorphic React components with a customizable `styled` function.
 
 A polymorphic component is a component that can be rendered with a different element.
 
-> **Known drawbacks for the type definitions:**
->
-> Event handlers are not typed correctly when using the `as` prop.
->
-> This is a deliberate decision to keep the usage as simple as possible.
-
 ## Installation
 
 ```bash
@@ -43,6 +37,39 @@ Import the polymorphic factory and create your element factory.
 ```ts
 import { polymorphicFactory } from '@polymorphic-factory/react'
 const poly = polymorphicFactory()
+```
+
+### Inline
+
+Use the element factory to create elements inline. Every JSX element is supported `div`, `main`,
+`aside`, etc.
+
+```tsx
+<>
+  <poly.div />
+  <poly.main>
+    <poly.section>
+      <poly.div as="p">This is rendered as a p element</poly.div>
+    </poly.section>
+  </poly.main>
+</>
+```
+
+### Refs
+
+You can also pass a `ref` to the element factory. This is useful when you want to access the DOM
+element.
+
+```tsx
+const ref = React.useRef<HTMLDivElement>(null)
+return <poly.div ref={ref} />
+```
+
+When using the `as` prop, the `ref` will be typed accordingly as well.
+
+```tsx
+const ref = React.useRef<HTMLAnchorElement>(null)
+return <poly.button as="a" ref={ref} />
 ```
 
 ### Custom `styled` function
@@ -72,22 +99,6 @@ const App = () => {
 }
 ```
 
-### Inline
-
-Use the element factory to create elements inline.
-Every JSX element is supported `div`, `main`, `aside`, etc.
-
-```tsx
-<>
-  <poly.div />
-  <poly.main>
-    <poly.section>
-      <poly.div as="p">This is rendered as a p element</poly.div>
-    </poly.section>
-  </poly.main>
-</>
-```
-
 ### Factory
 
 Use the factory to wrap custom components.
@@ -105,6 +116,15 @@ It still supports the `as` prop, which would replace the `OriginalComponent`.
 ```tsx
 <MyComponent as="div" />
 // renders <div />
+```
+
+If you want to allow a set of default props for each component, you can pass it as the first generic
+to `polymorphicFactory`.
+
+```tsx
+const poly = polymorphicFactory<{ background: 'red' | 'blue' }>()
+
+const App = () => <poly.div background="red" />
 ```
 
 ## Types
