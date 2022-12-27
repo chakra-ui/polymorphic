@@ -25,15 +25,9 @@ export type PropsOf<Component extends ElementType> = JSX.LibraryManagedAttribute
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
  */
-export type Assign<
-  Target extends Record<string, unknown>,
-  Source extends Record<string, unknown>,
-> = Omit<Target, keyof Source> & Source
+export type Assign<Target, Source> = Omit<Target, keyof Source> & Source
 
-export type ComponentWithAs<
-  Component extends ElementType,
-  Props extends Record<string, unknown> = Record<never, never>,
-> = {
+export type ComponentWithAs<Component extends ElementType, Props = Record<never, never>> = {
   <
     AsComponent extends ElementType = Component,
     Ref extends ElementRef<never> = ComponentRef<AsComponent>,
@@ -47,9 +41,8 @@ export type ComponentWithAs<
   id?: string
 }
 
-export function forwardRef<
-  Component extends ElementType,
-  Props extends Record<string, unknown> = Record<never, never>,
->(component: ForwardRefRenderFunction<never, Assign<PropsOf<Component>, Props>> & AsProp) {
+export function forwardRef<Component extends ElementType, Props = Record<never, never>>(
+  component: ForwardRefRenderFunction<never, Assign<PropsOf<Component>, Props>> & AsProp,
+) {
   return forwardRefReact(component) as unknown as ComponentWithAs<Component, Props>
 }
