@@ -75,6 +75,7 @@ describe('forwardRef', () => {
           className={(isActive: boolean) => (isActive ? 'active' : 'default')}
         />
         <ComponentUnderTest as={RouterLink} className="default" />
+        <ComponentUnderTest as="a" ref={createRef<HTMLAnchorElement>()} />
       </>,
     )
   })
