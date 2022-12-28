@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { type HTMLPolymorphicProps, polymorphicFactory } from '../src'
+import { type ComponentWithAs, type HTMLPolymorphicProps, polymorphicFactory } from '../src'
 
 describe('Polymorphic Factory', () => {
   describe('with default styled function', () => {
@@ -85,6 +85,39 @@ describe('Polymorphic Factory', () => {
     it('should expect required props', () => {
       // @ts-expect-error Property 'customProp' is missing
       render(<CustomComponent />)
+    })
+
+    it('should have correct types for the poly factory', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const Comp = (_props: Record<never, never>) => null
+      type CompWithRequiredProps = { thisIsARequiredProp: boolean }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const CompWithRequired = (_props: CompWithRequiredProps) => null
+
+      render(<poly.div />)
+      render(<poly.div as="img" src="/this-is-the-way.webp" />)
+      render(<poly.div as={Comp} />)
+      render(<poly.div as={CompWithRequired} thisIsARequiredProp />)
+    })
+
+    it('should have correct types for the ComponentWithAs with additional props', () => {
+      const AdditionalPropComp: ComponentWithAs<'div', { additionalProp: boolean }> = ({
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        additionalProp,
+        ...restProps
+      }) => <poly.div {...restProps} />
+
+      render(<AdditionalPropComp additionalProp />)
+    })
+
+    it('should have correct types for the ComponentWithAs with optional additional props', () => {
+      const OptionalAdditionalPropComp: ComponentWithAs<'div', { additionalProp?: boolean }> = ({
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        additionalProp,
+        ...restProps
+      }) => <poly.div {...restProps} />
+
+      render(<OptionalAdditionalPropComp />)
     })
   })
 
