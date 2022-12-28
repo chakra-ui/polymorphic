@@ -34,7 +34,25 @@ describe('forwardRef', () => {
     const onAnchorClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
       alert(e.currentTarget.nodeName)
     }
-    render(<poly.button as="a" onClick={onAnchorClick} />)
+    render(
+      <>
+        <poly.button as="a" onClick={onAnchorClick} />
+        <poly.button
+          as="a"
+          onClick={(e) => {
+            // with implicit typings
+            alert(e.currentTarget.nodeName)
+          }}
+        />
+        <poly.button
+          onClick={(e) => {
+            // with implicit typings
+            alert(e.currentTarget.nodeName)
+          }}
+        />
+        ,
+      </>,
+    )
   })
 
   it('should override duplicate prop declarations ', () => {
@@ -63,13 +81,20 @@ describe('forwardRef', () => {
 
   it('should handle custom props with highest priority', () => {
     // `size` is a prop of `React.InputHTMLAttributes<T>` and is of type `number`, we are overriding it with a string
-    const ComponentUnderTest = forwardRef<'input', { size: 'sm' | 'md' | 'lg' }>((props, ref) => {
+    const ComponentUnderTest = forwardRef<
+      'input',
+      { size: 'sm' | 'md' | 'lg'; variant: 'outline' | 'solid' }
+    >((props, ref) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { size, ...rest } = props
       return <poly.input {...rest} ref={ref} />
     })
 
-    render(<ComponentUnderTest as="input" size="sm" />)
-    render(<poly.input as={ComponentUnderTest} size="sm" />)
+    render(<ComponentUnderTest size="sm" variant="outline" disabled />)
+    render(<poly.input as={ComponentUnderTest} size="sm" variant="solid" disabled />)
+
+    // @ts-expect-error missing size and variant props
+    render(<poly.input as={ComponentUnderTest} />)
   })
 
   it('should not allow props outside the prop interface', () => {

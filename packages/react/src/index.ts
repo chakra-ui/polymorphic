@@ -1,4 +1,10 @@
-export { forwardRef, type ComponentWithAs, type PropsOf, type Assign } from './forwardRef'
+export {
+  forwardRef,
+  type ComponentWithAs,
+  type AsProp,
+  type PropsOf,
+  type Assign,
+} from './forwardRef'
 export {
   polymorphicFactory,
   type HTMLPolymorphicComponents,
