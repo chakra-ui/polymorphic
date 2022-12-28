@@ -1,0 +1,25 @@
+coverage:
+  status:
+    project:
+      default:
+        informational: true
+        target: auto
+        threshold: 2%
+    patch:
+      default:
+        informational: true
+
+flag_management:
+  individual_flags:
+    - name: preact
+      paths:
+        - packages/preact/
+    - name: react
+      paths:
+        - packages/react/
+    - name: solid
+      paths:
+        - packages/solid/
+    - name: vue
+      paths:
+        - packages/vue/

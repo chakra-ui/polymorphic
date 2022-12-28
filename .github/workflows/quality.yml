@@ -32,10 +32,25 @@ jobs:
       - name: Run tests
         run: pnpm test
 
-      - name: Upload coverage to Codecov
+      - name: Upload /preact coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: preact
+
+      - name: Upload /react coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          flags: react
+
+      - name: Upload /solid coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          flags: solid
+
+      - name: Upload /vue coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          flags: vue
 
   eslint:
     name: ESLint
