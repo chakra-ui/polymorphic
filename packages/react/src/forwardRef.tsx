@@ -1,11 +1,12 @@
 import {
-  type ClassAttributes,
-  type ComponentPropsWithoutRef,
-  type ComponentRef,
-  type ElementRef,
+  type Component,
+  type ComponentProps,
   type ElementType,
   forwardRef as forwardRefReact,
   type ForwardRefRenderFunction,
+  type PropsWithoutRef,
+  type PropsWithRef,
+  type RefAttributes,
   type ValidationMap,
   type WeakValidationMap,
 } from 'react'
@@ -14,9 +15,11 @@ export type AsProp<AsComponent extends ElementType = ElementType> = {
   as?: AsComponent
 }
 
-export type PropsOf<Component extends ElementType> = JSX.LibraryManagedAttributes<
-  Component,
-  ComponentPropsWithoutRef<Component>
+// thanks to https://dev.to/nasheomirro/create-fast-type-safe-polymorphic-components-with-the-as-prop-ncn
+export type PropsOf<T extends ElementType> = PropsWithRef<
+  T extends new (props: infer P) => Component<unknown, unknown>
+    ? PropsWithoutRef<P> & RefAttributes<InstanceType<T>>
+    : ComponentProps<T>
 >
 
 /**
@@ -28,17 +31,10 @@ export type PropsOf<Component extends ElementType> = JSX.LibraryManagedAttribute
 export type Assign<Target, Source> = Omit<Target, 'as' | keyof Source> & Source
 
 export type ComponentWithAs<Component extends ElementType, Props = Record<never, never>> = {
-  <
-    AsComponent extends ElementType = Component,
-    AsComponentProps = PropsOf<AsComponent>,
-    ComponentProps = PropsOf<Component>,
-    Ref extends ElementRef<never> = ComponentRef<AsComponent>,
-  >(
-    props: (AsComponentProps extends ComponentProps
-      ? Assign<AsComponentProps, Props>
-      : Assign<Assign<ComponentProps, AsComponentProps>, Props>) &
-      AsProp<AsComponent> &
-      ClassAttributes<Ref>,
+  <AsComponent extends ElementType = Component>(
+    props: Component extends AsComponent
+      ? Assign<PropsOf<Component>, Props & AsProp<Component>>
+      : Assign<PropsOf<AsComponent>, Props & AsProp<AsComponent>>,
   ): JSX.Element
 
   displayName?: string
