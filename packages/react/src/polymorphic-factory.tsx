@@ -1,25 +1,16 @@
 import type { ElementType } from 'react'
-import { type ComponentWithAs, forwardRef, type PropsOf } from './forwardRef'
+import { type ComponentWithAs, forwardRef, type PropsOf, type AsProp } from './forwardRef'
 
 type DOMElements = keyof JSX.IntrinsicElements
 
-export type HTMLPolymorphicComponents = {
-  [Tag in DOMElements]: ComponentWithAs<Tag>
+export type HTMLPolymorphicComponents<Props = Record<never, never>> = {
+  [Tag in DOMElements]: ComponentWithAs<Tag, Props>
 }
 
-export type HTMLPolymorphicProps<T extends ElementType> = Omit<PropsOf<T>, 'ref'> & {
-  as?: ElementType
-}
+export type HTMLPolymorphicProps<T extends ElementType> = PropsOf<T> & AsProp
 
-type PolymorphFactory = {
-  <
-    T extends ElementType,
-    P extends Record<string, unknown> = Record<never, never>,
-    Options = never,
-  >(
-    component: T,
-    option?: Options,
-  ): ComponentWithAs<T, P>
+type PolymorphFactory<Props = Record<never, never>, Options = never> = {
+  <T extends ElementType, P = Props>(component: T, option?: Options): ComponentWithAs<T, P>
 }
 
 function defaultStyled(originalComponent: ElementType) {
@@ -30,12 +21,8 @@ function defaultStyled(originalComponent: ElementType) {
   })
 }
 
-interface PolyFactoryParam<
-  Component extends ElementType,
-  Props extends Record<string, unknown>,
-  Options,
-> {
-  styled?: (component: Component, options?: Options) => ComponentWithAs<Component, Props>
+interface PolyFactoryParam<Props, Options> {
+  styled?: (component: ElementType, options?: Options) => ComponentWithAs<ElementType, Props>
 }
 
 /**
@@ -47,12 +34,10 @@ interface PolyFactoryParam<
  * <poly.main /> // => renders main
  * <poly.section as="main" /> => // renders main
  */
-export function polymorphicFactory<
-  Component extends ElementType,
-  Props extends Record<string, unknown>,
-  Options = never,
->({ styled = defaultStyled }: PolyFactoryParam<Component, Props, Options> = {}) {
-  const cache = new Map<Component, ComponentWithAs<Component, Props>>()
+export function polymorphicFactory<Props = Record<never, never>, Options = never>({
+  styled = defaultStyled,
+}: PolyFactoryParam<Props, Options> = {}) {
+  const cache = new Map<ElementType, ComponentWithAs<ElementType, Props>>()
 
   return new Proxy(styled, {
     /**
@@ -60,7 +45,7 @@ export function polymorphicFactory<
      * const Div = poly("div")
      * const WithPoly = poly(AnotherComponent)
      */
-    apply(target, thisArg, argArray: [Component, Options]) {
+    apply(target, thisArg, argArray: [ElementType, Options]) {
       return styled(...argArray)
     },
     /**
@@ -68,11 +53,11 @@ export function polymorphicFactory<
      * <poly.div />
      */
     get(_, element) {
-      const asElement = element as Component
+      const asElement = element as ElementType
       if (!cache.has(asElement)) {
         cache.set(asElement, styled(asElement))
       }
       return cache.get(asElement)
     },
-  }) as PolymorphFactory & HTMLPolymorphicComponents
+  }) as PolymorphFactory<Props, Options> & HTMLPolymorphicComponents<Props>
 }

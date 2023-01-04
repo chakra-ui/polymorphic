@@ -1,19 +1,17 @@
 import {
   type ComponentProps,
-  type ComponentPropsWithoutRef,
   type ElementType,
+  forwardRef as forwardRefReact,
   type ForwardRefRenderFunction,
   type ValidationMap,
   type WeakValidationMap,
-  forwardRef as forwardRefReact,
 } from 'react'
 
-/**
- * Extract the props of a React element or component
- */
-export type PropsOf<T extends ElementType> = ComponentPropsWithoutRef<T> & {
-  as?: ElementType
+export type AsProp<AsComponent extends ElementType = ElementType> = {
+  as?: AsComponent
 }
+
+export type PropsOf<T extends ElementType> = ComponentProps<T>
 
 /**
  * Assign property types from right to left.
@@ -23,51 +21,21 @@ export type PropsOf<T extends ElementType> = ComponentPropsWithoutRef<T> & {
  */
 export type Assign<Target, Source> = Omit<Target, keyof Source> & Source
 
-export type OmitCommonProps<
-  Target,
-  OmitAdditionalProps extends string | number | symbol = never,
-> = Omit<Target, 'transition' | 'as' | 'color' | OmitAdditionalProps>
-
-type AssignCommon<
-  SourceProps extends Record<string, unknown> = Record<never, never>,
-  OverrideProps extends Record<string, unknown> = Record<never, never>,
-> = Assign<OmitCommonProps<SourceProps>, OverrideProps>
-
-type MergeWithAs<
-  ComponentProps extends Record<string, unknown>,
-  AsProps extends Record<string, unknown>,
-  AdditionalProps extends Record<string, unknown> = Record<never, never>,
-  AsComponent extends ElementType = ElementType,
-> = AssignCommon<ComponentProps, AdditionalProps> &
-  AssignCommon<AsProps, AdditionalProps> & {
-    as?: AsComponent
-  }
-
-export type ComponentWithAs<
-  Component extends ElementType,
-  Props extends Record<string, unknown> = Record<never, never>,
-> = {
+export type ComponentWithAs<Component extends ElementType, Props = Record<never, never>> = {
   <AsComponent extends ElementType = Component>(
-    props: MergeWithAs<ComponentProps<Component>, ComponentProps<AsComponent>, Props, AsComponent>,
+    props: Component extends AsComponent
+      ? Assign<PropsOf<Component>, Props & AsProp<Component>>
+      : Assign<PropsOf<AsComponent>, Props & AsProp<AsComponent>>,
   ): JSX.Element
 
   displayName?: string
   propTypes?: WeakValidationMap<unknown>
   contextTypes?: ValidationMap<unknown>
-  defaultProps?: Partial<unknown>
   id?: string
 }
 
-export function forwardRef<
-  Component extends ElementType,
-  Props extends Record<string, unknown> = Record<never, never>,
->(
-  component: ForwardRefRenderFunction<
-    never,
-    AssignCommon<PropsOf<Component>, Props> & {
-      as?: ElementType
-    }
-  >,
+export function forwardRef<Component extends ElementType, Props = Record<never, never>>(
+  component: ForwardRefRenderFunction<never, Assign<PropsOf<Component>, Props>> & AsProp,
 ) {
   return forwardRefReact(component) as unknown as ComponentWithAs<Component, Props>
 }
