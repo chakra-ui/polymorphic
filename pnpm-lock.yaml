@@ -38,7 +38,7 @@ importers:
     specifiers:
       '@preact/preset-vite': 2.5.0
       '@testing-library/jest-dom': 5.16.5
-      '@testing-library/preact': 3.2.2
+      '@testing-library/preact': 3.2.3
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.27.2
       clean-package: 2.2.0
@@ -50,7 +50,7 @@ importers:
     devDependencies:
       '@preact/preset-vite': 2.5.0_preact@10.11.3+vite@4.0.4
       '@testing-library/jest-dom': 5.16.5
-      '@testing-library/preact': 3.2.2_preact@10.11.3
+      '@testing-library/preact': 3.2.3_preact@10.11.3
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.27.2_jsdom@21.0.0
       clean-package: 2.2.0
@@ -1830,13 +1830,13 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/preact/3.2.2_preact@10.11.3:
-    resolution: {integrity: sha512-mMPEp/9TOOqf3QqDHY02ieGFfRbi8fAxZvRifn+vOzrdNcCR1zchwPA6BvqXG3wAweRan4QJioYgEc1cePeC3g==}
+  /@testing-library/preact/3.2.3_preact@10.11.3:
+    resolution: {integrity: sha512-y6Kklp1XK3f1X2fWCbujmJyzkf+1BgLYXNgAx21j9+D4CoqMTz5qC4SQufb1L6q/jxLGACzrQ90ewVOTBvHOfg==}
     engines: {node: '>= 12'}
     peerDependencies:
       preact: '>=10 || ^10.0.0-alpha.0 || ^10.0.0-beta.0'
     dependencies:
-      '@testing-library/dom': 8.19.0
+      '@testing-library/dom': 8.20.0
       preact: 10.11.3
     dev: true
 
