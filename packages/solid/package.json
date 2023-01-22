@@ -49,7 +49,7 @@
     "@types/testing-library__jest-dom": "5.14.5",
     "@vitest/coverage-c8": "0.27.3",
     "clean-package": "2.2.0",
-    "esbuild": "0.17.3",
+    "esbuild": "0.17.4",
     "esbuild-plugin-solid": "0.4.2",
     "jsdom": "21.0.0",
     "solid-js": "1.6.9",
