@@ -28,7 +28,7 @@ describe('Polymorphic Factory', () => {
   })
 
   describe('with custom styled function', () => {
-    const customPoly = polymorphicFactory({
+    const customPoly = polymorphicFactory<Record<never, never>, { customOption: string }>({
       styled: (originalComponent, options) => (props) => {
         const [local, others] = splitProps(props, ['as'])
         const component = local.as || originalComponent
@@ -95,8 +95,7 @@ describe('Polymorphic Factory', () => {
 
     it('should expect required props', () => {
       // @ts-expect-error Property 'customProp' is missing
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const _unused = <CustomComponent />
+      render(() => <CustomComponent />)
     })
   })
 })

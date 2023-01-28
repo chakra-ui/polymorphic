@@ -1,5 +1,6 @@
 ---
 '@polymorphic-factory/react': minor
+'@polymorphic-factory/solid': minor
 ---
 
 Fixed an issue where the factory options type `polymorphicFactory<P, Options>()` did not propagate
