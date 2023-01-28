@@ -1,5 +1,26 @@
 # @polymorphic-factory/react
 
+## 0.3.0
+
+### Minor Changes
+
+- [#192](https://github.com/chakra-ui/polymorphic/pull/192) [`bc0f72a`](https://github.com/chakra-ui/polymorphic/commit/bc0f72a00cf328b8e342576abdaa993bc5fc547c) Thanks [@TimKolberger](https://github.com/TimKolberger)! - Fixed an issue where the factory options type `polymorphicFactory<P, Options>()` did not propagate
+  to the factory function `poly("div", options)`. **This is possibly a breaking change for TypeScript
+  users.**
+
+  ```tsx
+  type AdditionalProps = Record<never, never>
+  type Options = { 'data-custom-option': string }
+
+  const poly = polymorphicFactory<AdditionalProps, Options>({
+    styled: (component, options) => (props) => {
+      const Component = props.as || component
+      return <Component data-custom-styled data-options={JSON.stringify(options)} {...props} />
+    },
+  })
+  const CustomDiv = poly('div', { 'data-custom-option': 'hello' })
+  ```
+
 ## 0.2.2
 
 ### Patch Changes
