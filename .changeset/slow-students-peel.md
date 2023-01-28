@@ -1,4 +1,5 @@
 ---
+'@polymorphic-factory/preact': minor
 '@polymorphic-factory/react': minor
 '@polymorphic-factory/solid': minor
 ---
