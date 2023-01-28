@@ -12,6 +12,11 @@ users.**
 type AdditionalProps = Record<never, never>
 type Options = { 'data-custom-option': string }
 
-const poly = polymorphicFactory<AdditionalProps, Options>()
+const poly = polymorphicFactory<AdditionalProps, Options>({
+  styled: (component, options) => (props) => {
+    const Component = props.as || component
+    return <Component data-custom-styled data-options={JSON.stringify(options)} {...props} />
+  },
+})
 const CustomDiv = poly('div', { 'data-custom-option': 'hello' })
 ```
