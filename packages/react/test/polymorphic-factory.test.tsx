@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { type HTMLPolymorphicProps, polymorphicFactory } from '../src'
+import { HTMLPolymorphicProps, polymorphicFactory } from '../src'
 
 describe('Polymorphic Factory', () => {
   describe('with default styled function', () => {
@@ -26,7 +26,7 @@ describe('Polymorphic Factory', () => {
   })
 
   describe('with custom styled function', () => {
-    const customPoly = polymorphicFactory({
+    const customPoly = polymorphicFactory<Record<never, never>, { customOption?: string }>({
       styled: (component, options) => (props) => {
         const Component = props.as || component
         return <Component data-custom-styled data-options={JSON.stringify(options)} {...props} />
@@ -84,8 +84,7 @@ describe('Polymorphic Factory', () => {
 
     it('should expect required props', () => {
       // @ts-expect-error Property 'customProp' is missing
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const _unused = <CustomComponent />
+      render(<CustomComponent />)
     })
   })
 })

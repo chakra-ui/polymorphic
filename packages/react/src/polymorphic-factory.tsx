@@ -3,20 +3,21 @@ import { type ComponentWithAs, forwardRef, type PropsOf } from './forwardRef'
 
 type DOMElements = keyof JSX.IntrinsicElements
 
-export type HTMLPolymorphicComponents = {
-  [Tag in DOMElements]: ComponentWithAs<Tag>
+export type HTMLPolymorphicComponents<
+  Props extends Record<string, unknown> = Record<never, never>,
+> = {
+  [Tag in DOMElements]: ComponentWithAs<Tag, Props>
 }
 
 export type HTMLPolymorphicProps<T extends ElementType> = Omit<PropsOf<T>, 'ref'> & {
   as?: ElementType
 }
 
-type PolymorphFactory = {
-  <
-    T extends ElementType,
-    P extends Record<string, unknown> = Record<never, never>,
-    Options = never,
-  >(
+type PolymorphFactory<
+  Props extends Record<string, unknown> = Record<never, never>,
+  Options = never,
+> = {
+  <T extends ElementType, P extends Record<string, unknown> = Props>(
     component: T,
     option?: Options,
   ): ComponentWithAs<T, P>
@@ -48,9 +49,9 @@ interface PolyFactoryParam<
  * <poly.section as="main" /> => // renders main
  */
 export function polymorphicFactory<
-  Component extends ElementType,
-  Props extends Record<string, unknown>,
+  Props extends Record<never, never>,
   Options = never,
+  Component extends ElementType = ElementType,
 >({ styled = defaultStyled }: PolyFactoryParam<Component, Props, Options> = {}) {
   const cache = new Map<Component, ComponentWithAs<Component, Props>>()
 
@@ -74,5 +75,5 @@ export function polymorphicFactory<
       }
       return cache.get(asElement)
     },
-  }) as PolymorphFactory & HTMLPolymorphicComponents
+  }) as PolymorphFactory<Props, Options> & HTMLPolymorphicComponents<Props>
 }
