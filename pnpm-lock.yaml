@@ -105,7 +105,7 @@ importers:
       jsdom: 21.1.0
       solid-js: 1.6.10
       solid-testing-library: 0.5.1
-      tsup: 6.5.0
+      tsup: 6.6.0
       typescript: 4.9.5
       vite: 4.1.1
       vite-plugin-solid: 2.5.0
@@ -122,7 +122,7 @@ importers:
       jsdom: 21.1.0
       solid-js: 1.6.10
       solid-testing-library: 0.5.1_solid-js@1.6.10
-      tsup: 6.5.0_typescript@4.9.5
+      tsup: 6.6.0_typescript@4.9.5
       typescript: 4.9.5
       vite: 4.1.1
       vite-plugin-solid: 2.5.0_solid-js@1.6.10+vite@4.1.1
@@ -139,7 +139,7 @@ importers:
       '@vitest/coverage-c8': 0.28.4
       clean-package: 2.2.0
       jsdom: 21.1.0
-      tsup: 6.5.0
+      tsup: 6.6.0
       typescript: 4.9.5
       vite: 4.1.1
       vitest: 0.28.4
@@ -154,7 +154,7 @@ importers:
       '@vitest/coverage-c8': 0.28.4_jsdom@21.1.0
       clean-package: 2.2.0
       jsdom: 21.1.0
-      tsup: 6.5.0_typescript@4.9.5
+      tsup: 6.6.0_typescript@4.9.5
       typescript: 4.9.5
       vite: 4.1.1
       vitest: 0.28.4_jsdom@21.1.0
@@ -2578,13 +2578,13 @@ packages:
       load-tsconfig: 0.2.3
     dev: true
 
-  /bundle-require/3.1.2_esbuild@0.15.18:
-    resolution: {integrity: sha512-Of6l6JBAxiyQ5axFxUM6dYeP/W7X2Sozeo/4EYB9sJhL+dqL7TKjg+shwxp6jlu/6ZSERfsYtIpSJ1/x3XkAEA==}
+  /bundle-require/4.0.0_esbuild@0.17.6:
+    resolution: {integrity: sha512-5xjxGtR06579D7UcTBhcQO7Zg3A7ji5xuIUl7kNHSvVJ7/CmAs3bCosfYWNuD/Xm5k0jS9VFuPipSpm5S+ZlKw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
-      esbuild: '>=0.13'
+      esbuild: '>=0.17'
     dependencies:
-      esbuild: 0.15.18
+      esbuild: 0.17.6
       load-tsconfig: 0.2.3
     dev: true
 
@@ -5573,14 +5573,6 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /rollup/3.3.0:
-    resolution: {integrity: sha512-wqOV/vUJCYEbWsXvwCkgGWvgaEnsbn4jxBQWKpN816CqsmCimDmCNJI83c6if7QVD4v/zlyRzxN7U2yDT5rfoA==}
-    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
@@ -6173,8 +6165,8 @@ packages:
       - ts-node
     dev: true
 
-  /tsup/6.5.0_typescript@4.9.5:
-    resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
+  /tsup/6.6.0_typescript@4.9.5:
+    resolution: {integrity: sha512-HxZE7Hj5yNxLFftCXdcJ+Jsax8dI4oKb0bt8fIvd1g/W0FZ46sU1pFBVo15WpOERFcEMH7Hykey/Q+hKO4s9RQ==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
@@ -6189,17 +6181,17 @@ packages:
       typescript:
         optional: true
     dependencies:
-      bundle-require: 3.1.2_esbuild@0.15.18
+      bundle-require: 4.0.0_esbuild@0.17.6
       cac: 6.7.14
       chokidar: 3.5.3
       debug: 4.3.4
-      esbuild: 0.15.18
+      esbuild: 0.17.6
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
       postcss-load-config: 3.1.4
       resolve-from: 5.0.0
-      rollup: 3.3.0
+      rollup: 3.12.1
       source-map: 0.8.0-beta.0
       sucrase: 3.28.0
       tree-kill: 1.2.2
