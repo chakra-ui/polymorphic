@@ -43,7 +43,7 @@
     "postpack": "clean-package restore"
   },
   "devDependencies": {
-    "@testing-library/dom": "8.20.0",
+    "@testing-library/dom": "9.0.0",
     "@testing-library/jest-dom": "5.16.5",
     "@types/jsdom": "21.1.0",
     "@types/testing-library__jest-dom": "5.14.5",
