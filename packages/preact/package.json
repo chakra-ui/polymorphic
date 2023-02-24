@@ -50,7 +50,7 @@
     "@vitest/coverage-c8": "0.28.5",
     "clean-package": "2.2.0",
     "jsdom": "21.1.0",
-    "preact": "10.12.1",
+    "preact": "10.13.0",
     "typescript": "4.9.5",
     "vite": "4.1.4",
     "vitest": "0.28.5"
