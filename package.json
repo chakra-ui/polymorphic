@@ -32,7 +32,7 @@
     "@typescript-eslint/parser": "5.54.1",
     "eslint": "8.35.0",
     "husky": "8.0.3",
-    "lint-staged": "13.1.2",
+    "lint-staged": "13.2.0",
     "prettier": "2.8.4",
     "tsup": "^6.3.0",
     "turbo": "1.8.3",
