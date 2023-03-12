@@ -42,7 +42,7 @@ importers:
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.29.2
       clean-package: 2.2.0
-      jsdom: 21.1.0
+      jsdom: 21.1.1
       preact: 10.13.1
       typescript: 4.9.5
       vite: 4.1.4
@@ -54,11 +54,11 @@ importers:
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.29.2_vitest@0.29.2
       clean-package: 2.2.0
-      jsdom: 21.1.0
+      jsdom: 21.1.1
       preact: 10.13.1
       typescript: 4.9.5
       vite: 4.1.4
-      vitest: 0.29.2_jsdom@21.1.0
+      vitest: 0.29.2_jsdom@21.1.1
 
   packages/react:
     specifiers:
@@ -70,7 +70,7 @@ importers:
       '@vitejs/plugin-react': 3.1.0
       '@vitest/coverage-c8': 0.29.2
       clean-package: 2.2.0
-      jsdom: 21.1.0
+      jsdom: 21.1.1
       react: 18.2.0
       react-dom: 18.2.0
       typescript: 4.9.5
@@ -85,12 +85,12 @@ importers:
       '@vitejs/plugin-react': 3.1.0_vite@4.1.4
       '@vitest/coverage-c8': 0.29.2_vitest@0.29.2
       clean-package: 2.2.0
-      jsdom: 21.1.0
+      jsdom: 21.1.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       typescript: 4.9.5
       vite: 4.1.4
-      vitest: 0.29.2_jsdom@21.1.0
+      vitest: 0.29.2_jsdom@21.1.1
 
   packages/solid:
     specifiers:
@@ -102,7 +102,7 @@ importers:
       clean-package: 2.2.0
       esbuild: 0.17.11
       esbuild-plugin-solid: 0.5.0
-      jsdom: 21.1.0
+      jsdom: 21.1.1
       solid-js: 1.6.14
       solid-testing-library: 0.5.1
       tsup: 6.6.3
@@ -119,14 +119,14 @@ importers:
       clean-package: 2.2.0
       esbuild: 0.17.11
       esbuild-plugin-solid: 0.5.0_mewbrjmavnbxcjlltzkk65ca7m
-      jsdom: 21.1.0
+      jsdom: 21.1.1
       solid-js: 1.6.14
       solid-testing-library: 0.5.1_solid-js@1.6.14
       tsup: 6.6.3_typescript@4.9.5
       typescript: 4.9.5
       vite: 4.1.4
       vite-plugin-solid: 2.6.1_solid-js@1.6.14+vite@4.1.4
-      vitest: 0.29.2_jsdom@21.1.0
+      vitest: 0.29.2_jsdom@21.1.1
 
   packages/vue:
     specifiers:
@@ -138,7 +138,7 @@ importers:
       '@vitejs/plugin-vue-jsx': 3.0.0
       '@vitest/coverage-c8': 0.29.2
       clean-package: 2.2.0
-      jsdom: 21.1.0
+      jsdom: 21.1.1
       tsup: 6.6.3
       typescript: 4.9.5
       vite: 4.1.4
@@ -153,11 +153,11 @@ importers:
       '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.1.4+vue@3.2.47
       '@vitest/coverage-c8': 0.29.2_vitest@0.29.2
       clean-package: 2.2.0
-      jsdom: 21.1.0
+      jsdom: 21.1.1
       tsup: 6.6.3_typescript@4.9.5
       typescript: 4.9.5
       vite: 4.1.4
-      vitest: 0.29.2_jsdom@21.1.0
+      vitest: 0.29.2_jsdom@21.1.1
       vue: 3.2.47
 
 packages:
@@ -2016,7 +2016,7 @@ packages:
       c8: 7.13.0
       picocolors: 1.0.0
       std-env: 3.3.2
-      vitest: 0.29.2_jsdom@21.1.0
+      vitest: 0.29.2_jsdom@21.1.1
     dev: true
 
   /@vitest/expect/0.29.2:
@@ -2798,19 +2798,11 @@ packages:
     resolution: {integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==}
     dev: true
 
-  /cssom/0.3.8:
-    resolution: {integrity: sha512-b0tGHbfegbhPJpxpiBPU2sCkigAqtM9O121le6bbOlgyV+NyGyCmVfJ6QW9eRjz8CpNfWEOYBIMIGRYkLwsIYg==}
-    dev: true
-
-  /cssom/0.5.0:
-    resolution: {integrity: sha512-iKuQcq+NdHqlAcwUY0o/HL69XQrUaQdMjmStJ8JFmUaiiQErlhrmuigkg/CU4E2J0IyUKUrMAgl36TvN67MqTw==}
-    dev: true
-
-  /cssstyle/2.3.0:
-    resolution: {integrity: sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==}
-    engines: {node: '>=8'}
+  /cssstyle/3.0.0:
+    resolution: {integrity: sha512-N4u2ABATi3Qplzf0hWbVCdjenim8F3ojEXpBDF5hBpjzW182MjNGLqfmQ0SkSPeQ+V86ZXgeH8aXj6kayd4jgg==}
+    engines: {node: '>=14'}
     dependencies:
-      cssom: 0.3.8
+      rrweb-cssom: 0.6.0
     dev: true
 
   /csstype/2.6.21:
@@ -2848,13 +2840,13 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /data-urls/3.0.2:
-    resolution: {integrity: sha512-Jy/tj3ldjZJo63sVAvg6LHt2mHvl4V6AgRAmNDtLdm7faqtsx+aJG42rsyCo9JCoRVKwPFzKlIPx3DIibwSIaQ==}
-    engines: {node: '>=12'}
+  /data-urls/4.0.0:
+    resolution: {integrity: sha512-/mMTei/JXPqvFqQtfyTowxmJVwr2PVAeCcDxyFf6LhoOu/09TX2OX3kb2wzi4DMXcfj4OItwDOnhl5oziPnT6g==}
+    engines: {node: '>=14'}
     dependencies:
       abab: 2.0.6
       whatwg-mimetype: 3.0.0
-      whatwg-url: 11.0.0
+      whatwg-url: 12.0.1
     dev: true
 
   /dataloader/1.4.0:
@@ -4251,8 +4243,8 @@ packages:
       argparse: 2.0.1
     dev: true
 
-  /jsdom/21.1.0:
-    resolution: {integrity: sha512-m0lzlP7qOtthD918nenK3hdItSd2I+V3W9IrBcB36sqDwG+KnUs66IF5GY7laGWUnlM9vTsD0W1QwSEBYWWcJg==}
+  /jsdom/21.1.1:
+    resolution: {integrity: sha512-Jjgdmw48RKcdAIQyUD1UdBh2ecH7VqwaXPN3ehoZN6MqgVbMn+lRm1aAT1AsdJRAJpwfa4IpwgzySn61h2qu3w==}
     engines: {node: '>=14'}
     peerDependencies:
       canvas: ^2.5.0
@@ -4263,9 +4255,8 @@ packages:
       abab: 2.0.6
       acorn: 8.8.2
       acorn-globals: 7.0.1
-      cssom: 0.5.0
-      cssstyle: 2.3.0
-      data-urls: 3.0.2
+      cssstyle: 3.0.0
+      data-urls: 4.0.0
       decimal.js: 10.4.3
       domexception: 4.0.0
       escodegen: 2.0.0
@@ -4276,6 +4267,7 @@ packages:
       is-potential-custom-element-name: 1.0.1
       nwsapi: 2.2.2
       parse5: 7.1.2
+      rrweb-cssom: 0.6.0
       saxes: 6.0.0
       symbol-tree: 3.2.4
       tough-cookie: 4.1.2
@@ -4283,8 +4275,8 @@ packages:
       webidl-conversions: 7.0.0
       whatwg-encoding: 2.0.0
       whatwg-mimetype: 3.0.0
-      whatwg-url: 11.0.0
-      ws: 8.12.1
+      whatwg-url: 12.0.1
+      ws: 8.13.0
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -5339,6 +5331,10 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /rrweb-cssom/0.6.0:
+    resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
+    dev: true
+
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
@@ -5838,9 +5834,9 @@ packages:
       punycode: 2.3.0
     dev: true
 
-  /tr46/3.0.0:
-    resolution: {integrity: sha512-l7FvfAHlcmulp8kr+flpQZmVwtu7nfRV7NZujtN0OqES8EL4O4e0qqzL0DC5gAvx/ZC/9lk6rhcUwYvkBnBnYA==}
-    engines: {node: '>=12'}
+  /tr46/4.1.1:
+    resolution: {integrity: sha512-2lv/66T7e5yNyhAAC4NaKe5nVavzuGJQVVtRYLyQ2OI8tsJ61PMLlelehb0wi2Hx6+hT/OJUWZcw8MjlSRnxvw==}
+    engines: {node: '>=14'}
     dependencies:
       punycode: 2.3.0
     dev: true
@@ -6280,7 +6276,7 @@ packages:
       vite: 4.1.4
     dev: true
 
-  /vitest/0.29.2_jsdom@21.1.0:
+  /vitest/0.29.2_jsdom@21.1.1:
     resolution: {integrity: sha512-ydK9IGbAvoY8wkg29DQ4ivcVviCaUi3ivuPKfZEVddMTenFHUfB8EEDXQV8+RasEk1ACFLgMUqAaDuQ/Nk+mQA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -6314,7 +6310,7 @@ packages:
       cac: 6.7.14
       chai: 4.3.7
       debug: 4.3.4
-      jsdom: 21.1.0
+      jsdom: 21.1.1
       local-pkg: 0.4.3
       pathe: 1.1.0
       picocolors: 1.0.0
@@ -6384,11 +6380,11 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /whatwg-url/11.0.0:
-    resolution: {integrity: sha512-RKT8HExMpoYx4igMiVMY83lN6UeITKJlBQ+vR/8ZJ8OCdSiN3RwCq+9gH0+Xzj0+5IrM6i4j/6LuvzbZIQgEcQ==}
-    engines: {node: '>=12'}
+  /whatwg-url/12.0.1:
+    resolution: {integrity: sha512-Ed/LrqB8EPlGxjS+TrsXcpUond1mhccS3pchLhzSgPCnTimUCKj3IZE75pAs5m6heB2U2TMerKFUXheyHY+VDQ==}
+    engines: {node: '>=14'}
     dependencies:
-      tr46: 3.0.0
+      tr46: 4.1.1
       webidl-conversions: 7.0.0
     dev: true
 
@@ -6501,8 +6497,8 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /ws/8.12.1:
-    resolution: {integrity: sha512-1qo+M9Ba+xNhPB+YTWUlK6M17brTut5EXbcBaMRN5pH5dFrXz7lzz1ChFSUq3bOUl8yEvSenhHmYUNJxFzdJew==}
+  /ws/8.13.0:
+    resolution: {integrity: sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
