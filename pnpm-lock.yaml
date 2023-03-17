@@ -135,7 +135,7 @@ importers:
       '@types/jsdom': 21.1.0
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-vue': 4.1.0
-      '@vitejs/plugin-vue-jsx': 3.0.0
+      '@vitejs/plugin-vue-jsx': 3.0.1
       '@vitest/coverage-c8': 0.29.3
       clean-package: 2.2.0
       jsdom: 21.1.1
@@ -150,7 +150,7 @@ importers:
       '@types/jsdom': 21.1.0
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-vue': 4.1.0_vite@4.2.0+vue@3.2.47
-      '@vitejs/plugin-vue-jsx': 3.0.0_vite@4.2.0+vue@3.2.47
+      '@vitejs/plugin-vue-jsx': 3.0.1_vite@4.2.0+vue@3.2.47
       '@vitest/coverage-c8': 0.29.3_vitest@0.29.3
       clean-package: 2.2.0
       jsdom: 21.1.1
@@ -1779,8 +1779,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue-jsx/3.0.0_vite@4.2.0+vue@3.2.47:
-    resolution: {integrity: sha512-vurkuzgac5SYuxd2HUZqAFAWGTF10diKBwJNbCvnWijNZfXd+7jMtqjPFbGt7idOJUn584fP1Ar9j/GN2jQ3Ew==}
+  /@vitejs/plugin-vue-jsx/3.0.1_vite@4.2.0+vue@3.2.47:
+    resolution: {integrity: sha512-+Jb7ggL48FSPS1uhPnJbJwWa9Sr90vQ+d0InW+AhBM22n+cfuYqJZDckBc+W3QSHe1WDvewMZfa4wZOtk5pRgw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
