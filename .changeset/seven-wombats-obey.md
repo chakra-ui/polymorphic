@@ -19,16 +19,35 @@ type-safe.
 
 #### Migration path
 
-##### Before
+Replace the `as` prop with the `asChild` prop and add a child component accordingly. All props will
+be forwarded to the child component.
 
-```tsx
-<Button as="a" href="https://chakra-ui.com" />
+```diff
+- <Button as="a" className="button" href="https://chakra-ui.com" />
++ <Button className="button" asChild>
++   <a href="https://chakra-ui.com" />
++ </Button>
 ```
 
-##### After
+The `styled` function was renamed to `render`. The `render` function is a customizable function that
+is used to render the component. The default implementation is the `defaultPolymorphicRender`
+function.
 
-```tsx
-<Button asChild>
-  <a href="https://chakra-ui.com" />
-</Button>
+```diff
++ import { defaultPolymorphicRender } from '@polymorphic-factory/react'
+
+const poly = polymorphicFactory({
+-  styled: (component, options) => (props) => {
+-    const Component = props.as || component
+-    return <Component data-custom-styled data-options={JSON.stringify(options)} {...props} />
++  render: (component, options) => (props) => {
++    // use the default implementation to handle the `asChild` prop
++    const polymorphicRender = defaultPolymorphicRender(component, options)
++    return polymorphicRender({
++      'data-custom-styled': true,
++      'data-options': JSON.stringify(options),
++      ...props,
++    })
+  },
+})
 ```
