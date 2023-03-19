@@ -1,17 +1,24 @@
-import type { ElementType } from 'react'
-import { type ComponentWithAs, forwardRef, type PropsOf } from './forwardRef'
+import type { ComponentWithAsChild, WithAsChildProps } from './as-child'
+import {
+  Children,
+  cloneElement,
+  ComponentPropsWithRef,
+  type ElementType,
+  forwardRef,
+  isValidElement,
+  ReactNode,
+} from 'react'
+import { mergeRefs, SupportedRef } from './merge-refs'
 
 type DOMElements = keyof JSX.IntrinsicElements
 
 export type HTMLPolymorphicComponents<
   Props extends Record<string, unknown> = Record<never, never>,
 > = {
-  [Tag in DOMElements]: ComponentWithAs<Tag, Props>
+  [Tag in DOMElements]: ComponentWithAsChild<Tag, Props>
 }
 
-export type HTMLPolymorphicProps<T extends ElementType> = Omit<PropsOf<T>, 'ref'> & {
-  as?: ElementType
-}
+export type HTMLPolymorphicProps<T extends ElementType> = WithAsChildProps<ComponentPropsWithRef<T>>
 
 type PolymorphFactory<
   Props extends Record<string, unknown> = Record<never, never>,
@@ -20,15 +27,33 @@ type PolymorphFactory<
   <T extends ElementType, P extends Record<string, unknown> = Props>(
     component: T,
     option?: Options,
-  ): ComponentWithAs<T, P>
+  ): ComponentWithAsChild<T, P>
 }
 
-function defaultStyled(originalComponent: ElementType) {
-  return forwardRef((props, ref) => {
-    const { as, ...restProps } = props
-    const Component = as || originalComponent
-    return <Component {...restProps} ref={ref} />
-  })
+export function defaultPolymorphicRender(OriginalComponent: ElementType) {
+  return forwardRef<unknown, WithAsChildProps<{ children?: ReactNode }>>((props, ref) => {
+    const { asChild, children, ...restProps } = props
+
+    if (!asChild) {
+      return (
+        <OriginalComponent {...restProps} ref={ref}>
+          {children}
+        </OriginalComponent>
+      )
+    }
+
+    const onlyChild = Children.only(children)
+    if (!isValidElement(onlyChild)) {
+      return <>{onlyChild}</>
+    }
+
+    const view = cloneElement(onlyChild, {
+      ...restProps,
+      ref: mergeRefs([ref, (onlyChild as { ref?: SupportedRef }).ref]),
+      ...onlyChild.props,
+    })
+    return <>{view}</>
+  }) as ComponentWithAsChild
 }
 
 interface PolyFactoryParam<
@@ -36,7 +61,7 @@ interface PolyFactoryParam<
   Props extends Record<string, unknown>,
   Options,
 > {
-  styled?: (component: Component, options?: Options) => ComponentWithAs<Component, Props>
+  render?: (component: Component, options?: Options) => ComponentWithAsChild<Component, Props>
 }
 
 /**
@@ -46,23 +71,23 @@ interface PolyFactoryParam<
  * const poly = polymorphicFactory()
  * <poly.div /> // => renders div
  * <poly.main /> // => renders main
- * <poly.section as="main" /> => // renders main
+ * <poly.section asChild><main /></poly.section> => // renders main
  */
 export function polymorphicFactory<
   Props extends Record<never, never>,
   Options = never,
   Component extends ElementType = ElementType,
->({ styled = defaultStyled }: PolyFactoryParam<Component, Props, Options> = {}) {
-  const cache = new Map<Component, ComponentWithAs<Component, Props>>()
+>({ render = defaultPolymorphicRender }: PolyFactoryParam<Component, Props, Options> = {}) {
+  const cache = new Map<Component, ComponentWithAsChild<Component, Props>>()
 
-  return new Proxy(styled, {
+  return new Proxy(render, {
     /**
      * @example
      * const Div = poly("div")
      * const WithPoly = poly(AnotherComponent)
      */
     apply(target, thisArg, argArray: [Component, Options]) {
-      return styled(...argArray)
+      return render(...argArray)
     },
     /**
      * @example
@@ -71,7 +96,7 @@ export function polymorphicFactory<
     get(_, element) {
       const asElement = element as Component
       if (!cache.has(asElement)) {
-        cache.set(asElement, styled(asElement))
+        cache.set(asElement, render(asElement))
       }
       return cache.get(asElement)
     },
