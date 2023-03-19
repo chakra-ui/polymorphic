@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { HTMLPolymorphicProps, polymorphicFactory } from '../src'
+import { createRef } from 'react'
 
 describe('Polymorphic Factory', () => {
   describe('with default styled function', () => {
@@ -12,7 +13,11 @@ describe('Polymorphic Factory', () => {
     })
 
     it('should render an element with the as prop', () => {
-      render(<poly.div data-testid="poly" as="main" />)
+      render(
+        <poly.div data-testid="poly" asChild>
+          <main />
+        </poly.div>,
+      )
       const element = screen.getByTestId('poly')
       expect(element.nodeName).toBe('MAIN')
     })
@@ -23,12 +28,46 @@ describe('Polymorphic Factory', () => {
       const element = screen.getByTestId('poly')
       expect(element.nodeName).toBe('ASIDE')
     })
+
+    it('should forward the ref', () => {
+      const ref = createRef<HTMLDivElement>()
+      render(<poly.div data-testid="poly" ref={ref} />)
+      const element = screen.getByTestId('poly')
+      expect(ref.current).toBe(element)
+    })
+
+    it('should forward the ref with asChild prop', () => {
+      const divRef = createRef<HTMLDivElement>()
+      const mainRef = createRef<HTMLDivElement>()
+      render(
+        <poly.div data-testid="poly" asChild ref={divRef}>
+          <main ref={mainRef} />
+        </poly.div>,
+      )
+      const element = screen.getByTestId('poly')
+      expect(element.nodeName).toBe('MAIN')
+
+      expect(divRef.current).toBe(element)
+      expect(mainRef.current).toBe(element)
+    })
+
+    it('should not override a ref on the child element', () => {
+      const mainRef = createRef<HTMLDivElement>()
+      render(
+        <poly.div data-testid="poly" asChild>
+          <main ref={mainRef} />
+        </poly.div>,
+      )
+      const element = screen.getByTestId('poly')
+      expect(element.nodeName).toBe('MAIN')
+
+      expect(mainRef.current).toBe(element)
+    })
   })
 
   describe('with custom styled function', () => {
     const customPoly = polymorphicFactory<Record<never, never>, { customOption?: string }>({
-      styled: (component, options) => (props) => {
-        const Component = props.as || component
+      render: (Component, options) => (props) => {
         return <Component data-custom-styled data-options={JSON.stringify(options)} {...props} />
       },
     })
@@ -38,12 +77,6 @@ describe('Polymorphic Factory', () => {
       const element = screen.getByTestId('poly')
       expect(element.nodeName).toBe('DIV')
       expect(element).toHaveAttribute('data-custom-styled', 'true')
-    })
-
-    it('should render an element with the as prop', () => {
-      render(<customPoly.div data-testid="poly" as="main" />)
-      const element = screen.getByTestId('poly')
-      expect(element.nodeName).toBe('MAIN')
     })
 
     it('should render an element with the custom factory', () => {
