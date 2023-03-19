@@ -8,15 +8,17 @@
   <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@polymorphic-factory/react?style=flat"/>
 </p>
 
-Create polymorphic React components with a customizable `styled` function.
+Create polymorphic React components with a customizable `render` function.
 
-A polymorphic component is a component that can be rendered with a different element.
+A polymorphic component is a component that can be rendered with a different element. This is useful
+for component libraries that want to provide a consistent API for their users and want to allow them
+to customize the underlying element.
 
-> **Known drawbacks for the type definitions:**
->
-> Event handlers are not typed correctly when using the `as` prop.
->
-> This is a deliberate decision to keep the usage as simple as possible.
+```tsx
+<poly.button className="button" asChild>
+  <a href="https://chakra-ui.com">Looks like a button</a>
+</poly.button>
+```
 
 ## Installation
 
@@ -45,15 +47,22 @@ import { polymorphicFactory } from '@polymorphic-factory/react'
 const poly = polymorphicFactory()
 ```
 
-### Custom `styled` function
+### Custom `render` function
 
-You can override the default implementation by passing `styled` function in the options.
+You can override the default implementation by passing a `render` function in the options.
 
 ```tsx
+import { defaultPolymorphicRender } from '@polymorphic-factory/react'
+
 const poly = polymorphicFactory({
-  styled: (component, options) => (props) => {
-    const Component = props.as || component
-    return <Component data-custom-styled data-options={JSON.stringify(options)} {...props} />
+  render: (component, options) => (props) => {
+    // use the default implementation to handle the `asChild` prop
+    const polymorphicRender = defaultPolymorphicRender(component, options)
+    return polymorphicRender({
+      'data-custom-styled': true,
+      'data-options': JSON.stringify(options),
+      ...props,
+    })
   },
 })
 
@@ -74,15 +83,17 @@ const App = () => {
 
 ### Inline
 
-Use the element factory to create elements inline.
-Every JSX element is supported `div`, `main`, `aside`, etc.
+Use the element factory to create elements inline. Every JSX element is supported `div`, `main`,
+`aside`, etc.
 
 ```tsx
 <>
   <poly.div />
   <poly.main>
     <poly.section>
-      <poly.div as="p">This is rendered as a p element</poly.div>
+      <poly.div asChild>
+        <p>This is rendered as a p element</p>
+      </poly.div>
     </poly.section>
   </poly.main>
 </>
@@ -100,10 +111,12 @@ const App = () => <MyComponent />
 // render <div data-original="true" />
 ```
 
-It still supports the `as` prop, which would replace the `OriginalComponent`.
+It still supports the `asChild` prop:
 
 ```tsx
-<MyComponent as="div" />
+<MyComponent asChild>
+  <div />
+</MyComponent>
 // renders <div />
 ```
 
