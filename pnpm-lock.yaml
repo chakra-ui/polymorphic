@@ -105,7 +105,7 @@ importers:
       jsdom: 21.1.1
       solid-js: 1.6.15
       solid-testing-library: 0.5.1
-      tsup: 6.6.3
+      tsup: 6.7.0
       typescript: 4.9.5
       vite: 4.2.0
       vite-plugin-solid: 2.6.1
@@ -122,7 +122,7 @@ importers:
       jsdom: 21.1.1
       solid-js: 1.6.15
       solid-testing-library: 0.5.1_solid-js@1.6.15
-      tsup: 6.6.3_typescript@4.9.5
+      tsup: 6.7.0_typescript@4.9.5
       typescript: 4.9.5
       vite: 4.2.0
       vite-plugin-solid: 2.6.1_solid-js@1.6.15+vite@4.2.0
@@ -139,7 +139,7 @@ importers:
       '@vitest/coverage-c8': 0.29.3
       clean-package: 2.2.0
       jsdom: 21.1.1
-      tsup: 6.6.3
+      tsup: 6.7.0
       typescript: 4.9.5
       vite: 4.2.0
       vitest: 0.29.3
@@ -154,7 +154,7 @@ importers:
       '@vitest/coverage-c8': 0.29.3_vitest@0.29.3
       clean-package: 2.2.0
       jsdom: 21.1.1
-      tsup: 6.6.3_typescript@4.9.5
+      tsup: 6.7.0_typescript@4.9.5
       typescript: 4.9.5
       vite: 4.2.0
       vitest: 0.29.3_jsdom@21.1.1
@@ -5904,6 +5904,42 @@ packages:
       postcss-load-config: 3.1.4
       resolve-from: 5.0.0
       rollup: 3.17.2
+      source-map: 0.8.0-beta.0
+      sucrase: 3.29.0
+      tree-kill: 1.2.2
+      typescript: 4.9.5
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+    dev: true
+
+  /tsup/6.7.0_typescript@4.9.5:
+    resolution: {integrity: sha512-L3o8hGkaHnu5TdJns+mCqFsDBo83bJ44rlK7e6VdanIvpea4ArPcU3swWGsLVbXak1PqQx/V+SSmFPujBK+zEQ==}
+    engines: {node: '>=14.18'}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': ^1
+      postcss: ^8.4.12
+      typescript: '>=4.1.0'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      postcss:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      bundle-require: 4.0.1_esbuild@0.17.12
+      cac: 6.7.14
+      chokidar: 3.5.3
+      debug: 4.3.4
+      esbuild: 0.17.12
+      execa: 5.1.1
+      globby: 11.1.0
+      joycon: 3.1.1
+      postcss-load-config: 3.1.4
+      resolve-from: 5.0.0
+      rollup: 3.19.1
       source-map: 0.8.0-beta.0
       sucrase: 3.29.0
       tree-kill: 1.2.2
