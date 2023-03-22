@@ -96,7 +96,7 @@ importers:
     specifiers:
       '@testing-library/dom': 9.0.1
       '@testing-library/jest-dom': 5.16.5
-      '@types/jsdom': 21.1.0
+      '@types/jsdom': 21.1.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.29.7
       clean-package: 2.2.0
@@ -113,7 +113,7 @@ importers:
     devDependencies:
       '@testing-library/dom': 9.0.1
       '@testing-library/jest-dom': 5.16.5
-      '@types/jsdom': 21.1.0
+      '@types/jsdom': 21.1.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitest/coverage-c8': 0.29.7_vitest@0.29.7
       clean-package: 2.2.0
@@ -132,7 +132,7 @@ importers:
     specifiers:
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/vue': 6.6.1
-      '@types/jsdom': 21.1.0
+      '@types/jsdom': 21.1.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-vue': 4.1.0
       '@vitejs/plugin-vue-jsx': 3.0.1
@@ -147,7 +147,7 @@ importers:
     devDependencies:
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/vue': 6.6.1_vue@3.2.47
-      '@types/jsdom': 21.1.0
+      '@types/jsdom': 21.1.1
       '@types/testing-library__jest-dom': 5.14.5
       '@vitejs/plugin-vue': 4.1.0_vite@4.2.1+vue@3.2.47
       '@vitejs/plugin-vue-jsx': 3.0.1_vite@4.2.1+vue@3.2.47
@@ -1547,10 +1547,10 @@ packages:
       pretty-format: 29.4.3
     dev: true
 
-  /@types/jsdom/21.1.0:
-    resolution: {integrity: sha512-leWreJOdnuIxq9Y70tBVm/bvTuh31DSlF/r4l7Cfi4uhVQqLHD0Q4v301GMisEMwwbMgF7ZKxuZ+Jbd4NcdmRw==}
+  /@types/jsdom/21.1.1:
+    resolution: {integrity: sha512-cZFuoVLtzKP3gmq9eNosUL1R50U+USkbLtUQ1bYVgl/lKp0FZM7Cq4aIHAL8oIvQ17uSHi7jXPtfDOdjPwBE7A==}
     dependencies:
-      '@types/node': 18.14.1
+      '@types/node': 18.15.5
       '@types/tough-cookie': 4.0.2
       parse5: 7.1.2
     dev: true
@@ -1565,10 +1565,6 @@ packages:
 
   /@types/node/12.20.55:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
-    dev: true
-
-  /@types/node/18.14.1:
-    resolution: {integrity: sha512-QH+37Qds3E0eDlReeboBxfHbX9omAcBCXEzswCu6jySP642jiM3cYSIkU/REqwhCUqXdonHFuBfJDiAJxMNhaQ==}
     dev: true
 
   /@types/node/18.15.5:
