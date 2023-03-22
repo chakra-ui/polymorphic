@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@changesets/changelog-github': 0.4.8
       '@changesets/cli': 2.26.1
-      '@commitlint/cli': 17.4.4
+      '@commitlint/cli': 17.5.0
       '@commitlint/config-conventional': 17.4.4
       '@types/node': 18.15.5
       '@typescript-eslint/eslint-plugin': 5.56.0
@@ -21,7 +21,7 @@ importers:
     devDependencies:
       '@changesets/changelog-github': 0.4.8
       '@changesets/cli': 2.26.1
-      '@commitlint/cli': 17.4.4
+      '@commitlint/cli': 17.5.0
       '@commitlint/config-conventional': 17.4.4
       '@types/node': 18.15.5
       '@typescript-eslint/eslint-plugin': 5.56.0_iskin7c6dxqunwflhstekcjqmq
@@ -748,14 +748,14 @@ packages:
       prettier: 2.8.6
     dev: true
 
-  /@commitlint/cli/17.4.4:
-    resolution: {integrity: sha512-HwKlD7CPVMVGTAeFZylVNy14Vm5POVY0WxPkZr7EXLC/os0LH/obs6z4HRvJtH/nHCMYBvUBQhGwnufKfTjd5g==}
+  /@commitlint/cli/17.5.0:
+    resolution: {integrity: sha512-yNW3+M7UM1ioK28LKTrryIVB5qGpXlEv8+rJQiWPMZNayy9/1XR5+lL8qBTNlgopYtZWWnIm5RETcAN29ZTL/A==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
       '@commitlint/format': 17.4.4
       '@commitlint/lint': 17.4.4
-      '@commitlint/load': 17.4.4
+      '@commitlint/load': 17.5.0
       '@commitlint/read': 17.4.4
       '@commitlint/types': 17.4.4
       execa: 5.1.1
@@ -826,8 +826,8 @@ packages:
       '@commitlint/types': 17.4.4
     dev: true
 
-  /@commitlint/load/17.4.4:
-    resolution: {integrity: sha512-z6uFIQ7wfKX5FGBe1AkOF4l/ShOQsaa1ml/nLMkbW7R/xF8galGS7Zh0yHvzVp/srtfS0brC+0bUfQfmpMPFVQ==}
+  /@commitlint/load/17.5.0:
+    resolution: {integrity: sha512-l+4W8Sx4CD5rYFsrhHH8HP01/8jEP7kKf33Xlx2Uk2out/UKoKPYMOIRcDH5ppT8UXLMV+x6Wm5osdRKKgaD1Q==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/config-validator': 17.4.4
