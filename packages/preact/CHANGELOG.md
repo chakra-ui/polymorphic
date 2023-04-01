@@ -1,5 +1,11 @@
 # @polymorphic-factory/preact
 
+## 0.3.1
+
+### Patch Changes
+
+- [`4daf9a4`](https://github.com/chakra-ui/polymorphic/commit/4daf9a414dc062610c47467fe7c86bac0904d7ca) Thanks [@TimKolberger](https://github.com/TimKolberger)! - Slightly relax the typings for the `as` prop when it is not used.
+
 ## 0.3.0
 
 ### Minor Changes
