@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { HTMLPolymorphicProps, polymorphicFactory } from '../src'
+import type { Properties } from 'csstype'
 
 describe('Polymorphic Factory', () => {
   describe('with default styled function', () => {
@@ -85,6 +86,11 @@ describe('Polymorphic Factory', () => {
     it('should expect required props', () => {
       // @ts-expect-error Property 'customProp' is missing
       render(<CustomComponent />)
+    })
+
+    it('should handle many additional props', () => {
+      const poly = polymorphicFactory<Properties & { 'data-some-other': 'prop' }>()
+      render(<poly.div display="flex" data-some-other="prop" />)
     })
   })
 })
