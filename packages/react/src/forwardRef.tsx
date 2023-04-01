@@ -82,6 +82,11 @@ export type ComponentWithAs<
 export function forwardRef<
   Component extends ElementType,
   Props extends Record<never, never> = Record<never, never>,
->(component: ForwardRefRenderFunction<never, Props & { as?: ElementType }>) {
+>(
+  component: ForwardRefRenderFunction<
+    never,
+    Assign<PropsOf<Component>, Props> & { as?: ElementType }
+  >,
+) {
   return forwardRefReact(component) as unknown as ComponentWithAs<Component, Props>
 }

@@ -75,7 +75,7 @@ export type ComponentWithAs<
 }
 
 export function forwardRef<Component extends ElementType, Props extends object = object>(
-  component: ForwardFn<Props & { as?: ElementType }>,
+  component: ForwardFn<Assign<PropsOf<Component>, Props> & { as?: ElementType }>,
 ) {
   return forwardRefPreact(component) as unknown as ComponentWithAs<Component, Props>
 }
