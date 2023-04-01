@@ -1,5 +1,18 @@
 # @polymorphic-factory/solid
 
+## 0.3.0
+
+### Minor Changes
+
+- [#327](https://github.com/chakra-ui/polymorphic/pull/327) [`b572666`](https://github.com/chakra-ui/polymorphic/commit/b5726663f25075bc1c50c87a9015b3611000fb54) Thanks [@TimKolberger](https://github.com/TimKolberger)! - When using the `as` prop, the `ref` will now be typed accordingly.
+
+  **This is possibly a breaking change for TypeScript users.**
+
+  ```tsx
+  let ref: HTMLAnchorElement = undefined
+  return <poly.button as="a" ref={ref} />
+  ```
+
 ## 0.2.0
 
 ### Minor Changes
