@@ -21,9 +21,7 @@ describe('forwardRef', () => {
       <poly.div {...props} ref={ref} />
     ))
 
-    // known issue: with the `as` prop refs are not inherited correctly
-    // workaround:
-    const ref = createRef<HTMLDivElement & HTMLFormElement>()
+    const ref = createRef<HTMLFormElement>()
     render(<ComponentUnderTest as="form" ref={ref} />)
     expect(ref.current).toBeInstanceOf(HTMLFormElement)
   })

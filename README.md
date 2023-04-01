@@ -27,12 +27,6 @@ const App = () => (
 )
 ```
 
-> **Known drawbacks for the type definitions:**
->
-> Event handlers are not typed correctly when using the `as` prop.
->
-> This is a deliberate decision to keep the usage as simple as possible.
-
 This monorepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages:
 
 ## Packages

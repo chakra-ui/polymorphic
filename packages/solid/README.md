@@ -10,13 +10,10 @@
 
 Create polymorphic SolidJS components with a customizable `styled` function.
 
-A polymorphic component is a component that can be rendered with a different element.
+A polymorphic component is a component that can be rendered with a different element. This is useful
+for component libraries that want to provide a consistent API for their users and want to allow them
+to customize the underlying element.
 
-> **Known drawbacks for the type definitions:**
->
-> Event handlers are not typed correctly when using the `as` prop.
->
-> This is a deliberate decision to keep the usage as simple as possible.
 
 ## Installation
 

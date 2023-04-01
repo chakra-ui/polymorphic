@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { HTMLPolymorphicProps, polymorphicFactory } from '../src'
+import type { Properties } from 'csstype'
+import { createRef } from 'react'
 
 describe('Polymorphic Factory', () => {
   describe('with default styled function', () => {
@@ -15,6 +17,17 @@ describe('Polymorphic Factory', () => {
       render(<poly.div data-testid="poly" as="main" />)
       const element = screen.getByTestId('poly')
       expect(element.nodeName).toBe('MAIN')
+    })
+
+    it('should have the correct ref typings when using the as prop', () => {
+      const ref = createRef<HTMLAnchorElement>()
+
+      // @ts-expect-error - button ref is not an anchor ref
+      render(<poly.button ref={ref} />)
+
+      render(<poly.button data-testid="poly" as="a" ref={ref} />)
+      const element = screen.getByTestId('poly')
+      expect(element.nodeName).toBe('A')
     })
 
     it('should render an element with the factory', () => {
@@ -85,6 +98,11 @@ describe('Polymorphic Factory', () => {
     it('should expect required props', () => {
       // @ts-expect-error Property 'customProp' is missing
       render(<CustomComponent />)
+    })
+
+    it('should handle many additional props', () => {
+      const poly = polymorphicFactory<Properties & { 'data-some-other': 'prop' }>()
+      render(<poly.div display="flex" data-some-other="prop" />)
     })
   })
 })

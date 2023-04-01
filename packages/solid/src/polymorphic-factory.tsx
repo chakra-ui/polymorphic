@@ -7,46 +7,88 @@ type DOMElements = keyof JSX.IntrinsicElements
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ElementType = DOMElements | Component<any>
 
+export type PropsOf<T extends ElementType> = ComponentProps<T> & {
+  as?: ElementType
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type DistributiveOmit<T, K extends keyof any> = T extends any ? Omit<T, K> : never
+
 /**
  * Assign property types from right to left.
  * Think `Object.assign` for types.
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
  */
-export type Assign<Target, Source> = Omit<Target, keyof Source> & Source
+export type Assign<A, B> = DistributiveOmit<A, keyof B> & B
 
-/**
- * Extract the props of a solid element or component
- */
-export type PropsOf<T extends ElementType> = ComponentProps<T> & {
-  as?: ElementType
+type MergeWithAs<
+  Default extends ValidComponent,
+  Component extends ValidComponent,
+  PermanentProps extends Record<never, never>,
+  DefaultProps extends Record<never, never>,
+  ComponentProps extends Record<never, never>,
+> =
+  /**
+   * The following code is copied from the library react-polymorphed by nasheomirro.
+   * Thank your for creating this TypeScript gold!
+   *
+   * doing this makes sure typescript infers events. Without the
+   * extends check typescript won't do an additional inference phase,
+   * but somehow we can trick typescript into doing so. Note that the check needs to be relating
+   * to the generic for this to work.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  any extends Component
+    ? /**
+       * Merge<ComponentProps, OwnProps & { as?: Component }> looks sufficient,
+       * but typescript won't be able to infer events on components that haven't
+       * explicitly provided a value for the As generic or haven't provided an `as` prop.
+       * We could do the same trick again like the above but discriminating unions should be
+       * enough as we don't have to compute the value for the default.
+       *
+       * Also note that Merging here is needed not just for the purpose of
+       * overriding props but also because somehow it is needed to get the props correctly,
+       * Merge does clone the first object so that might have something to do with it.
+       */
+      | Assign<DefaultProps, PermanentProps & { as?: Default }>
+        | Assign<ComponentProps, PermanentProps & { as?: Component }>
+    : never
+
+export type ComponentWithAs<
+  Component extends ValidComponent,
+  Props extends Record<never, never> = Record<never, never>,
+> = {
+  <AsComponent extends ValidComponent = Component>(
+    props: MergeWithAs<
+      Component,
+      AsComponent,
+      Props,
+      ComponentProps<Component>,
+      ComponentProps<AsComponent>
+    >,
+  ): JSX.Element
 }
 
-export type ComponentWithAs<T extends ValidComponent, Props = Record<never, never>> = Component<
-  Assign<Assign<ComponentProps<T>, Props>, { as?: ElementType }>
->
-
-export type HTMLPolymorphicComponents<
-  Props extends Record<string, unknown> = Record<never, never>,
-> = {
+export type HTMLPolymorphicComponents<Props extends Record<never, never> = Record<never, never>> = {
   [Tag in DOMElements]: ComponentWithAs<Tag, Props>
 }
 
-export type HTMLPolymorphicProps<T extends ElementType> = Omit<ComponentProps<T>, 'ref'> & {
-  as?: ElementType
+export type HTMLPolymorphicProps<T extends ValidComponent> = Omit<ComponentProps<T>, 'ref'> & {
+  as?: ValidComponent
 }
 
 type PolymorphFactory<
-  Props extends Record<string, unknown> = Record<never, never>,
+  Props extends Record<never, never> = Record<never, never>,
   Options = never,
 > = {
-  <T extends ElementType, P extends Record<string, unknown> = Props>(
+  <T extends ValidComponent, P extends Record<never, never> = Props>(
     component: T,
     option?: Options,
   ): ComponentWithAs<T, P>
 }
 
-function defaultStyled(originalComponent: ElementType) {
+function defaultStyled(originalComponent: ValidComponent) {
   // any is required for the import('solid/web').ValidComponent typings:
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (props: ComponentProps<ComponentWithAs<any>>) => {
@@ -58,8 +100,8 @@ function defaultStyled(originalComponent: ElementType) {
 }
 
 interface PolyFactoryParam<
-  Component extends ElementType,
-  Props extends Record<string, unknown>,
+  Component extends ValidComponent,
+  Props extends Record<never, never>,
   Options,
 > {
   styled?: (component: Component, options?: Options) => ComponentWithAs<Component, Props>
@@ -77,7 +119,7 @@ interface PolyFactoryParam<
 export function polymorphicFactory<
   Props extends Record<never, never>,
   Options = never,
-  Component extends ElementType = ElementType,
+  Component extends ValidComponent = ValidComponent,
 >({ styled = defaultStyled }: PolyFactoryParam<Component, Props, Options> = {}) {
   const cache = new Map<Component, ComponentWithAs<Component, Props>>()
 

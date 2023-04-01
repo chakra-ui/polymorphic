@@ -3,9 +3,7 @@ import { type ComponentWithAs, forwardRef, type PropsOf } from './forwardRef'
 
 type DOMElements = keyof JSX.IntrinsicElements
 
-export type HTMLPolymorphicComponents<
-  Props extends Record<string, unknown> = Record<never, never>,
-> = {
+export type HTMLPolymorphicComponents<Props extends Record<never, never> = Record<never, never>> = {
   [Tag in DOMElements]: ComponentWithAs<Tag, Props>
 }
 
@@ -14,10 +12,10 @@ export type HTMLPolymorphicProps<T extends ElementType> = Omit<PropsOf<T>, 'ref'
 }
 
 type PolymorphFactory<
-  Props extends Record<string, unknown> = Record<never, never>,
+  Props extends Record<never, never> = Record<never, never>,
   Options = never,
 > = {
-  <T extends ElementType, P extends Record<string, unknown> = Props>(
+  <T extends ElementType, P extends Record<never, never> = Props>(
     component: T,
     option?: Options,
   ): ComponentWithAs<T, P>
@@ -33,7 +31,7 @@ function defaultStyled(originalComponent: ElementType) {
 
 interface PolyFactoryParam<
   Component extends ElementType,
-  Props extends Record<string, unknown>,
+  Props extends Record<never, never>,
   Options,
 > {
   styled?: (component: Component, options?: Options) => ComponentWithAs<Component, Props>

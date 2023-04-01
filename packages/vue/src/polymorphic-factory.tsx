@@ -2,6 +2,7 @@ import {
   type AllowedComponentProps,
   type ComponentCustomProps,
   type DefineComponent,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   h,
   defineComponent,
   type ExtractPropTypes,

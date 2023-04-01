@@ -10,13 +10,9 @@
 
 Create polymorphic Preact components with a customizable `styled` function.
 
-A polymorphic component is a component that can be rendered with a different element.
-
-> **Known drawbacks for the type definitions:**
->
-> Event handlers are not typed correctly when using the `as` prop.
->
-> This is a deliberate decision to keep the usage as simple as possible.
+A polymorphic component is a component that can be rendered with a different element. This is useful
+for component libraries that want to provide a consistent API for their users and want to allow them
+to customize the underlying element.
 
 ## Installation
 
@@ -105,6 +101,16 @@ It still supports the `as` prop, which would replace the `OriginalComponent`.
 ```tsx
 <MyComponent as="div" />
 // renders <div />
+```
+## Refs
+
+You can use `ref` on the component, and it will have the correct typings.
+
+```tsx
+const App = () => {
+  const ref = useRef<HTMLAnchorElement>(null)
+  return <poly.button as="a" ref={ref} />
+}
 ```
 
 ## Types
