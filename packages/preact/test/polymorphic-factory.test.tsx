@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/preact'
+import { createRef } from 'preact'
 import { type HTMLPolymorphicProps, polymorphicFactory } from '../src'
+import type { Properties } from 'csstype'
 
 describe('Polymorphic Factory', () => {
   describe('with default styled function', () => {
@@ -17,6 +19,17 @@ describe('Polymorphic Factory', () => {
       expect(element.nodeName).toBe('MAIN')
     })
 
+    it('should have the correct ref typings when using the as prop', () => {
+      const ref = createRef<HTMLAnchorElement>()
+
+      // @ts-expect-error - button ref is not an anchor ref
+      render(<poly.button ref={ref} />)
+
+      render(<poly.button data-testid="poly" as="a" ref={ref} />)
+      const element = screen.getByTestId('poly')
+      expect(element.nodeName).toBe('A')
+    })
+
     it('should render an element with the factory', () => {
       const Aside = poly('aside')
       render(<Aside data-testid="poly" />)
@@ -26,7 +39,7 @@ describe('Polymorphic Factory', () => {
   })
 
   describe('with custom styled function', () => {
-    const customPoly = polymorphicFactory<Record<never, never>, { customOption: string }>({
+    const customPoly = polymorphicFactory<Record<never, never>, { customOption?: string }>({
       styled: (component, options) => (props) => {
         const Component = props.as || component
         return <Component data-custom-styled data-options={JSON.stringify(options)} {...props} />
@@ -85,6 +98,11 @@ describe('Polymorphic Factory', () => {
     it('should expect required props', () => {
       // @ts-expect-error Property 'customProp' is missing
       render(<CustomComponent />)
+    })
+
+    it('should handle many additional props', () => {
+      const poly = polymorphicFactory<Properties & { 'data-some-other': 'prop' }>()
+      render(<poly.div display="flex" data-some-other="prop" />)
     })
   })
 })
