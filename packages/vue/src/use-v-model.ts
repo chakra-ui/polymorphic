@@ -4,12 +4,14 @@ const formElements = ['input', 'select', 'textarea', 'fieldset', 'datalist', 'op
 
 export const useVModel = (
   elementTag: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   modelValue: any,
   emit: CallableFunction,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   attrs: any,
 ) => {
   let vmodelAttrs = {}
-  const handleMultipleCheckbox = (value: any) => {
+  const handleMultipleCheckbox = (value: unknown) => {
     const currentModelValue = [...modelValue]
     if (currentModelValue.includes(value)) {
       currentModelValue.splice(currentModelValue.indexOf(value), 1)
