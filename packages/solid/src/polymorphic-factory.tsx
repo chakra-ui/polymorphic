@@ -1,4 +1,10 @@
-import { ValidComponent, Component, JSX, ComponentProps, splitProps } from 'solid-js'
+import {
+  type ValidComponent,
+  type Component,
+  type JSX,
+  type ComponentProps,
+  splitProps,
+} from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
 type DOMElements = keyof JSX.IntrinsicElements

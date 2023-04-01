@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { HTMLPolymorphicProps, polymorphicFactory } from '../src'
+import { type HTMLPolymorphicProps, polymorphicFactory } from '../src'
 import type { Properties } from 'csstype'
 import { createRef } from 'react'
 

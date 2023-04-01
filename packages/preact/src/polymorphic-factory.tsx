@@ -1,4 +1,4 @@
-import { type ComponentWithAs, ElementType, forwardRef, type PropsOf } from './forwardRef'
+import { type ComponentWithAs, type ElementType, forwardRef, type PropsOf } from './forwardRef'
 import type { JSX } from 'preact'
 
 type DOMElements = keyof JSX.IntrinsicElements

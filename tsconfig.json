@@ -8,10 +8,9 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
-    "isolatedModules": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "noEmit": false,
-    "importsNotUsedAsValues": "error"
+    "verbatimModuleSyntax": true
   }
 }

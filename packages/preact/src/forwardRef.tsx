@@ -1,5 +1,5 @@
 import type { ComponentProps, Context, JSX } from 'preact'
-import { ForwardFn, forwardRef as forwardRefPreact } from 'preact/compat'
+import { type ForwardFn, forwardRef as forwardRefPreact } from 'preact/compat'
 
 export type ElementType = JSX.ElementType
 
