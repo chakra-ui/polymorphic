@@ -61,7 +61,7 @@ type MergeWithAs<
 
 export type ComponentWithAs<
   Component extends ElementType,
-  Props extends Record<string, unknown> = Record<never, never>,
+  Props extends Record<never, never> = Record<never, never>,
 > = {
   <AsComponent extends ElementType = Component>(
     props: MergeWithAs<
@@ -81,7 +81,7 @@ export type ComponentWithAs<
 
 export function forwardRef<
   Component extends ElementType,
-  Props extends Record<string, unknown> = Record<never, never>,
+  Props extends Record<never, never> = Record<never, never>,
 >(component: ForwardRefRenderFunction<never, Props & { as?: ElementType }>) {
   return forwardRefReact(component) as unknown as ComponentWithAs<Component, Props>
 }
