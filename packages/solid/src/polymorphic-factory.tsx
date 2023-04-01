@@ -1,10 +1,4 @@
-import {
-  type ValidComponent,
-  type Component,
-  type JSX,
-  type ComponentProps,
-  splitProps,
-} from 'solid-js'
+import { type Component, type JSX, type ComponentProps, splitProps } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
 type DOMElements = keyof JSX.IntrinsicElements
@@ -29,8 +23,8 @@ type DistributiveOmit<T, K extends keyof any> = T extends any ? Omit<T, K> : nev
 export type Assign<A, B> = DistributiveOmit<A, keyof B> & B
 
 type MergeWithAs<
-  Default extends ValidComponent,
-  Component extends ValidComponent,
+  Default extends ElementType,
+  Component extends ElementType,
   PermanentProps extends Record<never, never>,
   DefaultProps extends Record<never, never>,
   ComponentProps extends Record<never, never>,
@@ -57,15 +51,15 @@ type MergeWithAs<
        * overriding props but also because somehow it is needed to get the props correctly,
        * Merge does clone the first object so that might have something to do with it.
        */
-      | Assign<DefaultProps, PermanentProps & { as?: Default }>
+      | Assign<DefaultProps, PermanentProps & { as?: Default | ElementType }>
         | Assign<ComponentProps, PermanentProps & { as?: Component }>
     : never
 
 export type ComponentWithAs<
-  Component extends ValidComponent,
+  Component extends ElementType,
   Props extends Record<never, never> = Record<never, never>,
 > = {
-  <AsComponent extends ValidComponent = Component>(
+  <AsComponent extends ElementType = Component>(
     props: MergeWithAs<
       Component,
       AsComponent,
@@ -80,21 +74,21 @@ export type HTMLPolymorphicComponents<Props extends Record<never, never> = Recor
   [Tag in DOMElements]: ComponentWithAs<Tag, Props>
 }
 
-export type HTMLPolymorphicProps<T extends ValidComponent> = Omit<ComponentProps<T>, 'ref'> & {
-  as?: ValidComponent
+export type HTMLPolymorphicProps<T extends ElementType> = Omit<ComponentProps<T>, 'ref'> & {
+  as?: ElementType
 }
 
 type PolymorphFactory<
   Props extends Record<never, never> = Record<never, never>,
   Options = never,
 > = {
-  <T extends ValidComponent, P extends Record<never, never> = Props>(
+  <T extends ElementType, P extends Record<never, never> = Props>(
     component: T,
     option?: Options,
   ): ComponentWithAs<T, P>
 }
 
-function defaultStyled(originalComponent: ValidComponent) {
+function defaultStyled(originalComponent: ElementType) {
   // any is required for the import('solid/web').ValidComponent typings:
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (props: ComponentProps<ComponentWithAs<any>>) => {
@@ -106,7 +100,7 @@ function defaultStyled(originalComponent: ValidComponent) {
 }
 
 interface PolyFactoryParam<
-  Component extends ValidComponent,
+  Component extends ElementType,
   Props extends Record<never, never>,
   Options,
 > {
@@ -125,7 +119,7 @@ interface PolyFactoryParam<
 export function polymorphicFactory<
   Props extends Record<never, never>,
   Options = never,
-  Component extends ValidComponent = ValidComponent,
+  Component extends ElementType = ElementType,
 >({ styled = defaultStyled }: PolyFactoryParam<Component, Props, Options> = {}) {
   const cache = new Map<Component, ComponentWithAs<Component, Props>>()
 

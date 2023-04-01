@@ -1,5 +1,5 @@
 import { render, screen } from 'solid-testing-library'
-import { type HTMLPolymorphicProps, polymorphicFactory } from '../src'
+import { type ComponentWithAs, type HTMLPolymorphicProps, polymorphicFactory } from '../src'
 import { splitProps } from 'solid-js'
 import { Dynamic } from 'solid-js/web'
 
@@ -96,6 +96,13 @@ describe('Polymorphic Factory', () => {
     it('should expect required props', () => {
       // @ts-expect-error Property 'customProp' is missing
       render(() => <CustomComponent />)
+    })
+
+    it('should allow arbitrary components for the as prop', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const Comp = (_props: Record<never, never>) => null
+      const CustomComp: ComponentWithAs<typeof Comp> = (props) => <poly.div as={Comp} {...props} />
+      render(() => <CustomComp />)
     })
   })
 })

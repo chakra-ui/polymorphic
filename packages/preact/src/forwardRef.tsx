@@ -50,7 +50,7 @@ type MergeWithAs<
        * overriding props but also because somehow it is needed to get the props correctly,
        * Merge does clone the first object so that might have something to do with it.
        */
-      | Assign<DefaultProps, PermanentProps & { as?: Default }>
+      | Assign<DefaultProps, PermanentProps & { as?: Default | ElementType }>
         | Assign<ComponentProps, PermanentProps & { as?: Component }>
     : never
 

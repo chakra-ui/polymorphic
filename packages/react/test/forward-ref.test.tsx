@@ -1,5 +1,5 @@
 import { createRef } from 'react'
-import type { HTMLPolymorphicProps } from '../src'
+import type { ComponentWithAs, HTMLPolymorphicProps } from '../src'
 import { polymorphicFactory, forwardRef } from '../src'
 import { render } from '@testing-library/react'
 
@@ -24,5 +24,12 @@ describe('forwardRef', () => {
     const ref = createRef<HTMLFormElement>()
     render(<ComponentUnderTest as="form" ref={ref} />)
     expect(ref.current).toBeInstanceOf(HTMLFormElement)
+  })
+
+  it('should allow arbitrary components for the as prop', () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const Comp = (_props: Record<never, never>) => null
+    const CustomComp: ComponentWithAs<typeof Comp> = (props) => <poly.div as={Comp} {...props} />
+    render(<CustomComp />)
   })
 })
