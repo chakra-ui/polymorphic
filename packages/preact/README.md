@@ -1,11 +1,21 @@
 <h1 align="center">@polymorphic-factory/preact</h1>
 
 <p align="center">
-  <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7"/>
-  <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic"/>
-  <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
-  <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@polymorphic-factory/preact"/>
-  <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@polymorphic-factory/preact?style=flat"/>
+  <a href="https://codecov.io/gh/chakra-ui/polymorphic"> 
+    <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7&flag=preact" /> 
+  </a>
+  <a href="https://github.com/chakra-ui/polymorphic/blob/main/LICENSE.md"> 
+    <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic" />
+  </a>
+  <a href="https://github.com/chakra-ui/polymorphic/stargazers"> 
+    <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
+  </a>
+  <a href="https://bundlephobia.com/package/@polymorphic-factory/preact">
+    <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@polymorphic-factory/preact"/>
+  </a>
+  <a href="https://www.npmjs.com/package/@polymorphic-factory/preact">
+    <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@polymorphic-factory/preact?style=flat"/>
+  </a>
 </p>
 
 Create polymorphic Preact components with a customizable `styled` function.
@@ -102,6 +112,7 @@ It still supports the `as` prop, which would replace the `OriginalComponent`.
 <MyComponent as="div" />
 // renders <div />
 ```
+
 ## Refs
 
 You can use `ref` on the component, and it will have the correct typings.

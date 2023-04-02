@@ -1,11 +1,21 @@
 <h1 align="center">@polymorphic-factory/solid</h1>
 
 <p align="center">
-  <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7"/>
-  <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic"/>
-  <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
-  <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@polymorphic-factory/solid"/>
-  <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@polymorphic-factory/solid?style=flat"/>
+  <a href="https://codecov.io/gh/chakra-ui/polymorphic"> 
+    <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7&flag=solid" /> 
+  </a>
+  <a href="https://github.com/chakra-ui/polymorphic/blob/main/LICENSE.md"> 
+    <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic" />
+  </a>
+  <a href="https://github.com/chakra-ui/polymorphic/stargazers"> 
+    <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
+  </a>
+  <a href="https://bundlephobia.com/package/@polymorphic-factory/solid">
+    <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@polymorphic-factory/solid"/>
+  </a>
+  <a href="https://www.npmjs.com/package/@polymorphic-factory/solid">
+    <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@polymorphic-factory/solid?style=flat"/>
+  </a>
 </p>
 
 Create polymorphic SolidJS components with a customizable `styled` function.
@@ -13,7 +23,6 @@ Create polymorphic SolidJS components with a customizable `styled` function.
 A polymorphic component is a component that can be rendered with a different element. This is useful
 for component libraries that want to provide a consistent API for their users and want to allow them
 to customize the underlying element.
-
 
 ## Installation
 

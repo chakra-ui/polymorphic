@@ -1,9 +1,15 @@
 <h1 align="center">@polymorphic-factory</h1>
 
 <p align="center">
-  <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7"/>
-  <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic"/>
-  <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
+  <a href="https://codecov.io/gh/chakra-ui/polymorphic"> 
+    <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7" /> 
+  </a>
+  <a href="https://github.com/chakra-ui/polymorphic/blob/main/LICENSE.md"> 
+    <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic" />
+  </a>
+  <a href="https://github.com/chakra-ui/polymorphic/stargazers"> 
+    <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
+  </a>
 </p>
 
 Create polymorphic React/Preact/SolidJS/Vue components with a customizable `styled` function.

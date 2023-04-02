@@ -1,11 +1,21 @@
 <h1 align="center">@polymorphic-factory/vue</h1>
 
 <p align="center">
-  <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7"/>
-  <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic"/>
-  <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
-  <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@polymorphic-factory/vue"/>
-  <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@polymorphic-factory/vue?style=flat"/>
+  <a href="https://codecov.io/gh/chakra-ui/polymorphic"> 
+    <img alt="CodeCov" src="https://codecov.io/gh/chakra-ui/polymorphic/branch/main/graph/badge.svg?token=GISB4HXIK7&flag=vue" /> 
+  </a>
+  <a href="https://github.com/chakra-ui/polymorphic/blob/main/LICENSE.md"> 
+    <img alt="MIT License" src="https://img.shields.io/github/license/chakra-ui/polymorphic" />
+  </a>
+  <a href="https://github.com/chakra-ui/polymorphic/stargazers"> 
+    <img alt="Github Stars" src="https://badgen.net/github/stars/chakra-ui/polymorphic" />
+  </a>
+  <a href="https://bundlephobia.com/package/@polymorphic-factory/vue"> 
+    <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@polymorphic-factory/vue" />
+  </a>
+  <a href="https://www.npmjs.com/package/@polymorphic-factory/vue">
+    <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@polymorphic-factory/vue?style=flat"/>
+  </a>
 </p>
 
 Create polymorphic VueJS components with a customizable `styled` function.
