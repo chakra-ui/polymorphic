@@ -20,17 +20,17 @@ export type ComponentWithAs<
   Component extends ElementType,
   P extends Record<string, unknown> = Record<never, never>,
 > = {
-  new(): {
+  new (): {
     $props: AllowedComponentProps &
-    ComponentCustomProps &
-    VNodeProps &
-    ExtractPropTypes<Component> &
-    (Component extends keyof IntrinsicElementAttributes
-      ? IntrinsicElementAttributes[Component]
-      : Record<never, never>) &
-    P & {
-      as?: ElementType
-    }
+      ComponentCustomProps &
+      VNodeProps &
+      ExtractPropTypes<Component> &
+      (Component extends keyof IntrinsicElementAttributes
+        ? IntrinsicElementAttributes[Component]
+        : Record<never, never>) &
+      P & {
+        as?: ElementType
+      }
   }
 }
 
@@ -63,11 +63,7 @@ function defaultStyled(originalComponent: ElementType) {
         getAttributes(Component as string, props.modelValue, emit, attrs),
       )
 
-      return () => (
-        <Component {...componentAttrs.value}>
-          {() => slots?.default?.()}
-        </Component>
-      )
+      return () => <Component {...componentAttrs.value}>{() => slots?.default?.()}</Component>
     },
   }) as ComponentWithAs<never>
 }
