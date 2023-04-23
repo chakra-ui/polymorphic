@@ -33,7 +33,7 @@
     "eslint": "8.39.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.1",
-    "prettier": "2.8.7",
+    "prettier": "2.8.8",
     "tsup": "^6.3.0",
     "turbo": "1.9.3",
     "typescript": "5.0.4"
