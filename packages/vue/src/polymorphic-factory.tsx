@@ -10,7 +10,7 @@ import {
   computed,
 } from 'vue'
 import type { IntrinsicElementAttributes } from './dom.types'
-import { useVModel } from './use-v-model'
+import { getAttributes } from './use-v-model'
 
 export type DOMElements = keyof IntrinsicElementAttributes
 
@@ -59,15 +59,11 @@ function defaultStyled(originalComponent: ElementType) {
     emits: ['update:modelValue', 'input', 'change'],
     setup(props, { slots, attrs, emit }) {
       const Component = props.as || originalComponent
-      const vmodelAttrs = computed(() =>
-        useVModel(Component as string, props.modelValue, emit, attrs),
+      const componentAttrs = computed(() =>
+        getAttributes(Component as string, props.modelValue, emit, attrs),
       )
 
-      return () => (
-        <Component {...vmodelAttrs.value} {...attrs}>
-          {slots?.default?.()}
-        </Component>
-      )
+      return () => <Component {...componentAttrs.value}>{() => slots?.default?.()}</Component>
     },
   }) as ComponentWithAs<never>
 }

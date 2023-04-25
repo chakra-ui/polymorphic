@@ -20,9 +20,9 @@ const singleCheckbox = ref(true)
   <poly.p>selected : {{ selectValue }}</poly.p>
 
   <poly.div>
-    <poly.input type="radio" v-model="radioValue" value="vue"></poly.input>
-    <poly.input type="radio" value="react" v-model="radioValue" data-testid="react-radio"></poly.input>
-    <poly.input type="radio" value="angular" v-model="radioValue"></poly.input>
+    <poly.input name="framework" type="radio" v-model="radioValue" value="vue"></poly.input>
+    <poly.input name="framework" type="radio" value="react" v-model="radioValue" data-testid="react-radio"></poly.input>
+    <poly.input name="framework" type="radio" value="angular" v-model="radioValue"></poly.input>
   </poly.div>
   <poly.p>Radio: {{ radioValue }}</poly.p>
 
