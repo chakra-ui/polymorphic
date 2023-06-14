@@ -1,5 +1,11 @@
 # @polymorphic-factory/vue
 
+## 0.2.1
+
+### Patch Changes
+
+- [#365](https://github.com/chakra-ui/polymorphic/pull/365) [`4decb22`](https://github.com/chakra-ui/polymorphic/commit/4decb228ee47670b0bbe9b51b5b7c57594c210ef) Thanks [@Shyrro](https://github.com/Shyrro)! - fix polymorphic input
+
 ## 0.2.0
 
 ### Minor Changes
