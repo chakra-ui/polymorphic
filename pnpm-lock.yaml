@@ -53,8 +53,8 @@ importers:
         specifier: 2.5.0
         version: 2.5.0(@babel/core@7.22.5)(preact@10.16.0)(vite@4.4.4)
       '@testing-library/jest-dom':
-        specifier: 5.16.5
-        version: 5.16.5
+        specifier: 5.17.0
+        version: 5.17.0
       '@testing-library/preact':
         specifier: 3.2.3
         version: 3.2.3(preact@10.16.0)
@@ -89,8 +89,8 @@ importers:
   packages/react:
     devDependencies:
       '@testing-library/jest-dom':
-        specifier: 5.16.5
-        version: 5.16.5
+        specifier: 5.17.0
+        version: 5.17.0
       '@testing-library/react':
         specifier: 14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -140,8 +140,8 @@ importers:
         specifier: 9.3.1
         version: 9.3.1
       '@testing-library/jest-dom':
-        specifier: 5.16.5
-        version: 5.16.5
+        specifier: 5.17.0
+        version: 5.17.0
       '@types/jsdom':
         specifier: 21.1.1
         version: 21.1.1
@@ -188,8 +188,8 @@ importers:
   packages/vue:
     devDependencies:
       '@testing-library/jest-dom':
-        specifier: 5.16.5
-        version: 5.16.5
+        specifier: 5.17.0
+        version: 5.17.0
       '@testing-library/vue':
         specifier: 7.0.0
         version: 7.0.0(@vue/compiler-sfc@3.2.47)(vue@3.2.47)
@@ -2022,8 +2022,8 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/jest-dom@5.16.5:
-    resolution: {integrity: sha512-N5ixQ2qKpi5OLYfwQmUb/5mSV9LneAcaUfp32pn4yCnpb8r/Yz0pXFPck21dIicKmi+ta5WRAknkZCfA8refMA==}
+  /@testing-library/jest-dom@5.17.0:
+    resolution: {integrity: sha512-ynmNeT7asXyH3aSVv4vvX4Rb+0qjOhdNHnO/3vuZNqPmhDpV/+rCSGwQ7bLcmU2cJ4dvoheIO85LQj0IbJHEtg==}
     engines: {node: '>=8', npm: '>=6', yarn: '>=1'}
     dependencies:
       '@adobe/css-tools': 4.2.0
@@ -6740,7 +6740,7 @@ packages:
         optional: true
     dependencies:
       '@types/node': 18.16.16
-      esbuild: 0.18.14
+      esbuild: 0.18.12
       postcss: 8.4.25
       rollup: 3.26.1
     optionalDependencies:
