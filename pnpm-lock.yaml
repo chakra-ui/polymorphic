@@ -200,8 +200,8 @@ importers:
         specifier: 5.14.9
         version: 5.14.9
       '@vitejs/plugin-vue':
-        specifier: 4.3.1
-        version: 4.3.1(vite@4.4.9)(vue@3.2.47)
+        specifier: 4.3.2
+        version: 4.3.2(vite@4.4.9)(vue@3.2.47)
       '@vitejs/plugin-vue-jsx':
         specifier: 3.0.2
         version: 3.0.2(vite@4.4.9)(vue@3.2.47)
@@ -2538,8 +2538,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue@4.3.1(vite@4.4.9)(vue@3.2.47):
-    resolution: {integrity: sha512-tUBEtWcF7wFtII7ayNiLNDTCE1X1afySEo+XNVMNkFXaThENyCowIEX095QqbJZGTgoOcSVDJGlnde2NG4jtbQ==}
+  /@vitejs/plugin-vue@4.3.2(vite@4.4.9)(vue@3.2.47):
+    resolution: {integrity: sha512-iDDhGruwhKkwNwT5qgtGaeTxF4ULs52xpQbsC27F01kf3aQBHtrDP738pmHw4oclVAUA3m+Vk8gxhDV5KbfM+A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
