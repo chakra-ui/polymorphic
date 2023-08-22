@@ -143,8 +143,8 @@ importers:
         specifier: 5.17.0
         version: 5.17.0
       '@types/jsdom':
-        specifier: 21.1.1
-        version: 21.1.1
+        specifier: 21.1.2
+        version: 21.1.2
       '@types/testing-library__jest-dom':
         specifier: 5.14.9
         version: 5.14.9
@@ -194,8 +194,8 @@ importers:
         specifier: 7.0.0
         version: 7.0.0(@vue/compiler-sfc@3.2.47)(vue@3.2.47)
       '@types/jsdom':
-        specifier: 21.1.1
-        version: 21.1.1
+        specifier: 21.1.2
+        version: 21.1.2
       '@types/testing-library__jest-dom':
         specifier: 5.14.9
         version: 5.14.9
@@ -2287,10 +2287,10 @@ packages:
       pretty-format: 29.4.3
     dev: true
 
-  /@types/jsdom@21.1.1:
-    resolution: {integrity: sha512-cZFuoVLtzKP3gmq9eNosUL1R50U+USkbLtUQ1bYVgl/lKp0FZM7Cq4aIHAL8oIvQ17uSHi7jXPtfDOdjPwBE7A==}
+  /@types/jsdom@21.1.2:
+    resolution: {integrity: sha512-bGj+7TaCkOwkJfx7HtS9p22Ij0A2aKMuz8a1+owpkxa1wU/HUBy/WAXhdv90uDdVI9rSjGvUrXmLSeA9VP3JeA==}
     dependencies:
-      '@types/node': 18.15.5
+      '@types/node': 18.17.7
       '@types/tough-cookie': 4.0.2
       parse5: 7.1.2
     dev: true
@@ -2305,10 +2305,6 @@ packages:
 
   /@types/node@12.20.55:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
-    dev: true
-
-  /@types/node@18.15.5:
-    resolution: {integrity: sha512-Ark2WDjjZO7GmvsyFFf81MXuGTA/d6oP38anyxWOL6EREyBKAxKoFHwBhaZxCfLRLpO8JgVXwqOwSwa7jRcjew==}
     dev: true
 
   /@types/node@18.16.16:
