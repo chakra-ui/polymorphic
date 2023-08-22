@@ -45,7 +45,7 @@
   "devDependencies": {
     "@testing-library/dom": "9.3.1",
     "@testing-library/jest-dom": "5.17.0",
-    "@types/jsdom": "21.1.1",
+    "@types/jsdom": "21.1.2",
     "@types/testing-library__jest-dom": "5.14.9",
     "@vitest/coverage-c8": "0.31.4",
     "clean-package": "2.2.0",
