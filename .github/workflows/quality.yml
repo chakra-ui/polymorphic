@@ -36,22 +36,22 @@ jobs:
         run: pnpm test
 
       - name: Upload /preact coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           flags: preact
 
       - name: Upload /react coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           flags: react
 
       - name: Upload /solid coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           flags: solid
 
       - name: Upload /vue coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           flags: vue
 
