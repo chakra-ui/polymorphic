@@ -51,7 +51,7 @@
     "csstype": "3.1.2",
     "clean-package": "2.2.0",
     "jsdom": "22.1.0",
-    "preact": "10.17.1",
+    "preact": "10.18.1",
     "typescript": "5.2.2",
     "vite": "4.4.9",
     "vitest": "0.31.4"
