@@ -53,7 +53,7 @@
     "jsdom": "22.1.0",
     "preact": "10.18.1",
     "typescript": "5.2.2",
-    "vite": "4.4.10",
+    "vite": "4.4.11",
     "vitest": "0.31.4"
   },
   "peerDependencies": {
