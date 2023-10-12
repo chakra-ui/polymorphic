@@ -17,8 +17,8 @@ importers:
         specifier: 17.7.0
         version: 17.7.0
       '@types/node':
-        specifier: 18.18.4
-        version: 18.18.4
+        specifier: 18.18.5
+        version: 18.18.5
       '@typescript-eslint/eslint-plugin':
         specifier: 5.62.0
         version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.51.0)(typescript@5.2.2)
@@ -81,7 +81,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: 4.4.11
-        version: 4.4.11(@types/node@18.18.4)
+        version: 4.4.11(@types/node@18.18.5)
       vitest:
         specifier: 0.31.4
         version: 0.31.4(jsdom@22.1.0)
@@ -129,7 +129,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: 4.4.11
-        version: 4.4.11(@types/node@18.18.4)
+        version: 4.4.11(@types/node@18.18.5)
       vitest:
         specifier: 0.31.4
         version: 0.31.4(jsdom@22.1.0)
@@ -177,7 +177,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: 4.4.11
-        version: 4.4.11(@types/node@18.18.4)
+        version: 4.4.11(@types/node@18.18.5)
       vite-plugin-solid:
         specifier: 2.7.1
         version: 2.7.1(solid-js@1.8.1)(vite@4.4.11)
@@ -222,7 +222,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: 4.4.11
-        version: 4.4.11(@types/node@18.18.4)
+        version: 4.4.11(@types/node@18.18.5)
       vitest:
         specifier: 0.31.4
         version: 0.31.4(jsdom@22.1.0)
@@ -1285,7 +1285,7 @@ packages:
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1(@types/node@18.18.4)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@18.18.5)(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
       - '@swc/core'
@@ -2048,7 +2048,7 @@ packages:
       '@jest/schemas': 29.4.3
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 18.18.4
+      '@types/node': 18.18.5
       '@types/yargs': 17.0.22
       chalk: 4.1.2
     dev: true
@@ -2146,7 +2146,7 @@ packages:
       debug: 4.3.4
       kolorist: 1.7.0
       resolve: 1.22.1
-      vite: 4.4.11(@types/node@18.18.4)
+      vite: 4.4.11(@types/node@18.18.5)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -2180,7 +2180,7 @@ packages:
       '@prefresh/utils': 1.1.3
       '@rollup/pluginutils': 4.2.1
       preact: 10.18.1
-      vite: 4.4.11(@types/node@18.18.4)
+      vite: 4.4.11(@types/node@18.18.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2413,8 +2413,8 @@ packages:
     resolution: {integrity: sha512-e0zgs7qe1XH/X3KEPnldfkD07LH9O1B9T31U8qoO7lqGSjj3/IrBuvqMeJ1aYejXRK3KOphIUDw6pLIplEW17A==}
     dev: true
 
-  /@types/node@18.18.4:
-    resolution: {integrity: sha512-t3rNFBgJRugIhackit2mVcLfF6IRc0JE4oeizPQL8Zrm8n2WY/0wOdpOPhdtG0V9Q2TlW/axbF1MJ6z+Yj/kKQ==}
+  /@types/node@18.18.5:
+    resolution: {integrity: sha512-4slmbtwV59ZxitY4ixUZdy1uRLf9eSIvBWPQxNjhHYWEtn0FryfKpyS2cvADYXTayWdKEIsJengncrVvkI4I6A==}
     dev: true
 
   /@types/node@20.5.1:
@@ -2616,7 +2616,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.23.0)
       '@types/babel__core': 7.20.2
       react-refresh: 0.14.0
-      vite: 4.4.11(@types/node@18.18.4)
+      vite: 4.4.11(@types/node@18.18.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2631,7 +2631,7 @@ packages:
       '@babel/core': 7.22.10
       '@babel/plugin-transform-typescript': 7.22.10(@babel/core@7.22.10)
       '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.22.10)
-      vite: 4.4.11(@types/node@18.18.4)
+      vite: 4.4.11(@types/node@18.18.5)
       vue: 3.2.47
     transitivePeerDependencies:
       - supports-color
@@ -2644,7 +2644,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.11(@types/node@18.18.4)
+      vite: 4.4.11(@types/node@18.18.5)
       vue: 3.2.47
     dev: true
 
@@ -3424,7 +3424,7 @@ packages:
     dependencies:
       '@types/node': 20.5.1
       cosmiconfig: 8.0.0
-      ts-node: 10.9.1(@types/node@18.18.4)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@18.18.5)(typescript@5.2.2)
       typescript: 5.2.2
     dev: true
 
@@ -4875,7 +4875,7 @@ packages:
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
       '@jest/types': 29.4.3
-      '@types/node': 18.18.4
+      '@types/node': 18.18.5
       chalk: 4.1.2
       ci-info: 3.8.0
       graceful-fs: 4.2.10
@@ -5706,7 +5706,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.1.0
-      ts-node: 10.9.1(@types/node@18.18.4)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@18.18.5)(typescript@5.2.2)
       yaml: 1.10.2
     dev: true
 
@@ -6499,7 +6499,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-node@10.9.1(@types/node@18.18.4)(typescript@5.2.2):
+  /ts-node@10.9.1(@types/node@18.18.5)(typescript@5.2.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -6518,7 +6518,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 18.18.4
+      '@types/node': 18.18.5
       acorn: 8.9.0
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -6861,7 +6861,7 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.8.1
       solid-refresh: 0.5.3(solid-js@1.8.1)
-      vite: 4.4.11(@types/node@18.18.4)
+      vite: 4.4.11(@types/node@18.18.5)
       vitefu: 0.2.4(vite@4.4.11)
     transitivePeerDependencies:
       - supports-color
@@ -6903,7 +6903,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite@4.4.11(@types/node@18.18.4):
+  /vite@4.4.11(@types/node@18.18.5):
     resolution: {integrity: sha512-ksNZJlkcU9b0lBwAGZGGaZHCMqHsc8OpgtoYhsQ4/I2v5cnpmmmqe5pM4nv/4Hn6G/2GhTdj0DhZh2e+Er1q5A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -6931,7 +6931,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.18.4
+      '@types/node': 18.18.5
       esbuild: 0.18.19
       postcss: 8.4.27
       rollup: 3.27.2
@@ -6947,7 +6947,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.11(@types/node@18.18.4)
+      vite: 4.4.11(@types/node@18.18.5)
     dev: true
 
   /vitest@0.31.4(jsdom@22.1.0):
