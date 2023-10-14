@@ -46,7 +46,7 @@
     "@testing-library/jest-dom": "5.17.0",
     "@testing-library/preact": "3.2.3",
     "@types/testing-library__jest-dom": "5.14.9",
-    "@preact/preset-vite": "2.5.0",
+    "@preact/preset-vite": "2.6.0",
     "@vitest/coverage-c8": "0.31.4",
     "csstype": "3.1.2",
     "clean-package": "2.2.0",
