@@ -40,7 +40,7 @@
     "@vitest/coverage-c8": "0.31.4",
     "clean-package": "2.2.0",
     "jsdom": "22.1.0",
-    "tsup": "6.7.0",
+    "tsup": "7.2.0",
     "typescript": "5.2.2",
     "vite": "4.4.11",
     "vitest": "0.31.4",

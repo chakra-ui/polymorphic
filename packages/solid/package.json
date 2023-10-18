@@ -54,7 +54,7 @@
     "jsdom": "22.1.0",
     "solid-js": "1.8.1",
     "solid-testing-library": "0.5.1",
-    "tsup": "6.7.0",
+    "tsup": "7.2.0",
     "typescript": "5.2.2",
     "vite": "4.4.11",
     "vite-plugin-solid": "2.7.2",
