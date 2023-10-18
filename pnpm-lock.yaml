@@ -53,8 +53,8 @@ importers:
         specifier: 2.6.0
         version: 2.6.0(@babel/core@7.23.0)(preact@10.18.1)(vite@4.4.11)
       '@testing-library/jest-dom':
-        specifier: 5.17.0
-        version: 5.17.0
+        specifier: 6.1.4
+        version: 6.1.4(vitest@0.31.4)
       '@testing-library/preact':
         specifier: 3.2.3
         version: 3.2.3(preact@10.18.1)
@@ -89,8 +89,8 @@ importers:
   packages/react:
     devDependencies:
       '@testing-library/jest-dom':
-        specifier: 5.17.0
-        version: 5.17.0
+        specifier: 6.1.4
+        version: 6.1.4(vitest@0.31.4)
       '@testing-library/react':
         specifier: 14.0.0
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
@@ -140,8 +140,8 @@ importers:
         specifier: 9.3.3
         version: 9.3.3
       '@testing-library/jest-dom':
-        specifier: 5.17.0
-        version: 5.17.0
+        specifier: 6.1.4
+        version: 6.1.4(vitest@0.31.4)
       '@types/jsdom':
         specifier: 21.1.4
         version: 21.1.4
@@ -188,8 +188,8 @@ importers:
   packages/vue:
     devDependencies:
       '@testing-library/jest-dom':
-        specifier: 5.17.0
-        version: 5.17.0
+        specifier: 6.1.4
+        version: 6.1.4(vitest@0.31.4)
       '@testing-library/vue':
         specifier: 7.0.0
         version: 7.0.0(@vue/compiler-sfc@3.2.47)(vue@3.2.47)
@@ -237,8 +237,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@adobe/css-tools@4.2.0:
-    resolution: {integrity: sha512-E09FiIft46CmH5Qnjb0wsW54/YQd69LsxeKUOWawmws1XWvyFGURnAChH0mlr7YPFR1ofwvUQfcL0J3lMxXqPA==}
+  /@adobe/css-tools@4.3.1:
+    resolution: {integrity: sha512-/62yikz7NLScCGAAST5SHdnjaDJQBDq0M2muyRTpf2VQhw6StBg2ALiu73zSJQ4fMVLA+0uBhBHAle7Wg+2kSg==}
     dev: true
 
   /@ampproject/remapping@2.2.1:
@@ -2194,19 +2194,33 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/jest-dom@5.17.0:
-    resolution: {integrity: sha512-ynmNeT7asXyH3aSVv4vvX4Rb+0qjOhdNHnO/3vuZNqPmhDpV/+rCSGwQ7bLcmU2cJ4dvoheIO85LQj0IbJHEtg==}
-    engines: {node: '>=8', npm: '>=6', yarn: '>=1'}
+  /@testing-library/jest-dom@6.1.4(vitest@0.31.4):
+    resolution: {integrity: sha512-wpoYrCYwSZ5/AxcrjLxJmCU6I5QAJXslEeSiMQqaWmP2Kzpd1LvF/qxmAIW2qposULGWq2gw30GgVNFLSc2Jnw==}
+    engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
+    peerDependencies:
+      '@jest/globals': '>= 28'
+      '@types/jest': '>= 28'
+      jest: '>= 28'
+      vitest: '>= 0.32'
+    peerDependenciesMeta:
+      '@jest/globals':
+        optional: true
+      '@types/jest':
+        optional: true
+      jest:
+        optional: true
+      vitest:
+        optional: true
     dependencies:
-      '@adobe/css-tools': 4.2.0
+      '@adobe/css-tools': 4.3.1
       '@babel/runtime': 7.21.0
-      '@types/testing-library__jest-dom': 5.14.9
       aria-query: 5.1.3
       chalk: 3.0.0
       css.escape: 1.5.1
       dom-accessibility-api: 0.5.16
       lodash: 4.17.21
       redent: 3.0.0
+      vitest: 0.31.4(jsdom@22.1.0)
     dev: true
 
   /@testing-library/preact@3.2.3(preact@10.18.1):
