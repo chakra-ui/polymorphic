@@ -44,7 +44,7 @@
     "typescript": "5.2.2",
     "vite": "4.5.0",
     "vitest": "0.31.4",
-    "vue": "3.2.47"
+    "vue": "3.3.6"
   },
   "peerDependencies": {
     "vue": ">=3"
